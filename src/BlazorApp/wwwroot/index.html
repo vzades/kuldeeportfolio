@@ -17,13 +17,20 @@
         } else if (path[path.length - 1].length != 0) {
             window.location.replace(window.location.origin + window.location.pathname + '/' + window.location.search);
         }
-    </script>
 
+    </script>
     <link href="BlazorApp.styles.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="app">
+        Loading...
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
