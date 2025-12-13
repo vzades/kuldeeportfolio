@@ -1,89 +1,52 @@
 @page "/"
+@implements IAsyncDisposable
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <span class="logo">Bansuri</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="@menuOpen" @onclick="ToggleMobileMenu">
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about" class="nav-link" @onclick="CloseMenu">About</a></li>
+            <li><a href="#testimonials" class="nav-link" @onclick="CloseMenu">Testimonials</a></li>
+            <li><a href="#courses" class="nav-link" @onclick="CloseMenu">Courses</a></li>
+            <li><a href="#contact" class="nav-link" @onclick="CloseMenu">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
 <section class="hero">
     <div class="container">
-        <h1>Learn the Flute with <span class="accent">Kuldeep Mishra</span></h1>
-        <p class="subtitle">Professional flute teacher • Personalized lessons • Beginner to advanced</p>
-        <a class="cta" href="https://www.linkedin.com/in/kuldeepmishra08/" target="_blank">Book a Free Lesson</a>
+        <div class="hero-content">
+            <h1>Learn <span class="accent">Indian Bamboo Flute</span> Online</h1>
+            <p class="subtitle">The world's last unadulterated music. Before every tune becomes auto-tune.</p>
+            <a class="cta cta-primary" href="https://www.linkedin.com/in/kuldeepmishra08/" target="_blank" rel="noopener noreferrer">Take a Demo Lesson</a>
+        </div>
     </div>
 </section>
 
 <section id="about" class="section">
-    <div class="container grid">
-        <div>
-            <h2>About Me</h2>
-            <p>
-                I am a classically trained flautist with <strong>10+ years</strong> of teaching experience. I help
-                students build a strong foundation in tone, technique, sight-reading, and musical expression.
-                My approach blends classical repertoire with modern pieces to keep lessons engaging and goal-driven.
-            </p>
-            <ul class="ticks">
-                <li>Beginner, Intermediate, and Advanced learners welcome</li>
-                <li>One-to-one and small group classes</li>
-                <li>Online and in-person sessions (by appointment)</li>
-            </ul>
-        </div>
-        <div class="about-card">
-            <h3>Quick Facts</h3>
-            <ul>
-                <li>Education: B.Mus in Performance</li>
-                <li>Specialization: Tone, articulation, and breath control</li>
-                <li>Languages: English, Hindi ,odia</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section id="courses" class="section alt">
     <div class="container">
-        <h2>Courses</h2>
-        <div class="courses">
-            <article class="course">
-                <h3>Beginner Foundations</h3>
-                <p class="summary">Embouchure, posture, breathing, and first melodies.</p>
-                <ul>
-                    <li>Hold the flute comfortably and produce a clear tone</li>
-                    <li>Learn basic notation and rhythms</li>
-                    <li>Play simple songs with proper breath control</li>
-                    <li>Practice routine and progress tracking</li>
-                </ul>
-                <div class="meta">
-                    <span><strong>Duration:</strong> 8 weeks (1×60 min/week)</span>
-                    <span><strong>Format:</strong> Online or In-person</span>
-                    <span><strong>Fee:</strong> ₹6,000 per month</span>
-                </div>
-            </article>
-
-            <article class="course">
-                <h3>Intermediate Technique</h3>
-                <p class="summary">Tone color, articulation, scales, and sight-reading.</p>
-                <ul>
-                    <li>Major/minor scales & arpeggios up to 2 sharps/flats</li>
-                    <li>Legato vs. staccato, tonguing patterns</li>
-                    <li>Dynamics and phrasing for musical expression</li>
-                    <li>Duets and ensemble awareness</li>
-                </ul>
-                <div class="meta">
-                    <span><strong>Duration:</strong> 12 weeks (1×60 min/week)</span>
-                    <span><strong>Format:</strong> Online or In-person</span>
-                    <span><strong>Fee:</strong> ₹7,500 per month</span>
-                </div>
-            </article>
-
-            <article class="course">
-                <h3>Advanced Performance</h3>
-                <p class="summary">Repertoire, interpretation, auditions, and stage craft.</p>
-                <ul>
-                    <li>Advanced etudes and concert pieces</li>
-                    <li>Vibrato development and intonation refinement</li>
-                    <li>Recital preparation and mock performances</li>
-                    <li>ABRSM/Trinity exam coaching</li>
-                </ul>
-                <div class="meta">
-                    <span><strong>Duration:</strong> 12+ weeks (customized)</span>
-                    <span><strong>Format:</strong> Online or In-person</span>
-                    <span><strong>Fee:</strong> ₹9,000 per month</span>
-                </div>
+        <h2>About Me</h2>
+        <div class="about-wrapper">
+            <article class="about-card">
+                <p>
+                    I began learning the bansuri (Indian bamboo flute) during my MBA studies, at a time when my academic focus was on business. As my Guru often says, "The flute chose me, and I chose to stay."
+                </p>
+                <p>
+                    Over time, this journey led me to become one of the youngest instructors on an online learning platform, where I have guided more than 250 students from across the world.
+                </p>
+                <p>
+                    This experience shaped not only my approach to teaching music but also my understanding of how individuals truly learn.
+                </p>
+                <p>
+                    Today, I am fully devoted to the practice and teaching of this ancient Indian instrument, supporting sincere learners in exploring the bansuri with patience, clarity, and ease.
+                </p>
             </article>
         </div>
     </div>
@@ -91,76 +54,227 @@
 
 <section id="testimonials" class="section">
     <div class="container">
-        <h2>Student Testimony</h2>
-        <figure class="testimonial">
-            <blockquote>
-                “I started as a complete beginner, and within three months I could play my favorite melodies with
-                confidence. The focus on breathing and tone made a huge difference!”
-            </blockquote>
-            <figcaption>
-                — <strong>Riya S.</strong>, high-school student (Beginner Course)
-            </figcaption>
-        </figure>
+        <h2>Student Testimonials</h2>
+        <div class="testimonials-grid">
+            <article class="testimonial">
+                <blockquote>
+                    "I started as a complete beginner, and within three months I could play my favorite melodies with confidence. The focus on breathing and tone made a huge difference!"
+                </blockquote>
+                <figcaption>
+                    <strong>Vnay Jhedu</strong>, IT Engineer
+                </figcaption>
+            </article>
+        </div>
     </div>
 </section>
 
-<section id="contact" class="section alt">
-    <div class="container grid">
-        <div>
-            <h2>Contact Information</h2>
-            <ul class="contact-list">
-                <li><strong>Email:</strong> youremail@example.com</li>
-                <li><strong>Phone:</strong> +91-90000-00000</li>
-                <li><strong>WhatsApp:</strong> +91-90000-00000</li>
-                <li><strong>Instagram:</strong> <a href="https://instagram.com/vzades" target="_blank">vzades</a></li>
-                <li><strong>Lesson Hours:</strong> Mon–Sat, 10:00–19:00 IST</li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kuldeepmishra08/" target="_blank">kuldeepmishra08</a></li>
-            </ul>
-        </div>
-         <div>
-             <iframe 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/u4zkMvQzyR4" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
+<section id="courses" class="section alt">
+    <div class="container">
+        <h2>Courses</h2>
+        <div class="courses-grid">
+            <article class="course">
+                <div class="course-header">
+                    <h3>Beginner Foundations</h3>
+                    <p class="course-summary">Embouchure, posture, breathing, and first melodies.</p>
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Hold the flute comfortably and produce a clear tone</li>
+                        <li>Learn basic notation and rhythms</li>
+                        <li>Play simple songs with proper breath control</li>
+                        <li>Practice routine and progress tracking</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">8 weeks (1×60 min/week)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Fee</span>
+                        <span class="meta-value">₹6,000 per month</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="course">
+                <div class="course-header">
+                    <h3>Intermediate Technique</h3>
+                    <p class="course-summary">Tone color, articulation, scales, and sight-reading.</p>
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Major/minor scales & arpeggios up to 2 sharps/flats</li>
+                        <li>Legato vs. staccato, tonguing patterns</li>
+                        <li>Dynamics and phrasing for musical expression</li>
+                        <li>Duets and ensemble awareness</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">12 weeks (1×60 min/week)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Fee</span>
+                        <span class="meta-value">₹7,500 per month</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="course">
+                <div class="course-header">
+                    <h3>Advanced Performance</h3>
+                    <p class="course-summary">Repertoire, interpretation, auditions, and stage craft.</p>
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Advanced etudes and concert pieces</li>
+                        <li>Vibrato development and intonation refinement</li>
+                        <li>Recital preparation and mock performances</li>
+                        <li>ABRSM/Trinity exam coaching</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">12+ weeks (customized)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Fee</span>
+                        <span class="meta-value">₹9,000 per month</span>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
-       
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-wrapper">
+            <article class="contact-card">
+                <h3>Contact Information</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">youremail@example.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+91-90000-00000</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">+91-90000-00000</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Instagram</span>
+                        <span class="contact-value"><a href="https://instagram.com/vzades" target="_blank" rel="noopener noreferrer">@@vzades</a></span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Lesson Hours</span>
+                        <span class="contact-value">Mon–Sat, 10:00–19:00 IST</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value"><a href="https://www.linkedin.com/in/kuldeepmishra08/" target="_blank" rel="noopener noreferrer">kuldeepmishra08</a></span>
+                    </li>
+                </ul>
+            </article>
+            <article class="media-card">
+                <h3>Featured Video</h3>
+                <div class="video-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/u4zkMvQzyR4" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        aria-label="Featured YouTube video">
+                    </iframe>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
 
 <footer class="footer">
     <div class="container">
-        <p>© @DateTime.Now.Year</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#testimonials">Testimony</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="footer-content">
+            <p class="footer-copyright">© @DateTime.Now.Year. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </div>
 </footer>
 
+@code {
+    private bool menuOpen = false;
+
+    private void ToggleMobileMenu()
+    {
+        menuOpen = !menuOpen;
+        var navMenu = new System.Collections.Generic.List<string> { "navMenu" };
+    }
+
+    private void CloseMenu()
+    {
+        menuOpen = false;
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        await Task.CompletedTask;
+    }
+}
+
 <style>
     :root {
-        --bg: #0b0c10;
-        --card: #111318;
-        --text: #e6e6e6;
-        --muted: #b8c1cc;
-        --accent: #7dd3fc;
-        --accent-2: #a78bfa;
-        --ok: #10b981;
+        --bg: #ffffff;
+        --card: #f5f5f5;
+        --text: #2d3436;
+        --muted: #636e72;
+        --accent: #808080;
+        --accent-2: #666666;
+        --ok: #5a5a5a;
+        --border: #e0e0e0;
+        --shadow: 0 2px 8px rgba(45, 52, 54, 0.08);
+        --shadow-lg: 0 4px 16px rgba(45, 52, 54, 0.12);
     }
 
     * {
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
     }
 
     .container {
@@ -169,29 +283,225 @@
         padding: 0 1rem;
     }
 
+    /* ========== NAVIGATION ========== */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    .nav-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.5px;
+    }
+
+    .logo {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .hamburger {
+        width: 24px;
+        height: 3px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* ========== RESPONSIVE NAVIGATION ========== */
+    @@media (max-width: 768px) {
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            gap: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .nav-menu[aria-expanded="true"] {
+            max-height: 300px;
+        }
+
+        .nav-menu li {
+            width: 100%;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem;
+            border: none;
+        }
+
+        .nav-link:hover {
+            background: var(--card);
+            border: none;
+        }
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+        padding: 8rem 0;
+        background: radial-gradient(1200px 500px at 70% -20%, rgba(128,128,128,0.05), transparent), 
+                    radial-gradient(1000px 500px at 20% -10%, rgba(102,102,102,0.04), transparent), 
+                    var(--bg);
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 1.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero .subtitle {
+        font-size: 1.25rem;
+        color: var(--muted);
+        margin: 0 0 2rem;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    .cta {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        border: none;
+    }
+
+    .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .cta:active {
+        transform: translateY(0);
+    }
+
+    /* ========== SECTIONS ========== */
     .section {
-        padding: 4rem 0;
+        padding: 6rem 0;
         color: var(--text);
         background: var(--bg);
     }
 
-        .section.alt {
-            background: linear-gradient(180deg, #0b0c10 0%, #0e1016 100%);
-        }
+    .section.alt {
+        background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    }
 
+    .section h2 {
+        font-size: 2.5rem;
+        margin: 0 0 3rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    /* ========== TYPOGRAPHY ========== */
     h1, h2, h3 {
         margin: 0 0 1rem;
-        color: #fff;
+        color: var(--text);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
     }
 
     p {
         color: var(--muted);
-        line-height: 1.7;
+        line-height: 1.8;
+        margin: 0 0 1.5rem;
+        font-size: 1rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
     }
 
     a {
         color: var(--accent);
         text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        color: var(--accent-2);
+        text-decoration: underline;
     }
 
     .accent {
@@ -201,147 +511,391 @@
         color: transparent;
     }
 
-    .hero {
-        padding: 6rem 0 4rem;
-        background: radial-gradient(1200px 500px at 70% -20%, rgba(125,211,252,0.12), transparent), radial-gradient(1000px 500px at 20% -10%, rgba(167,139,250,0.1), transparent), var(--bg);
-        color: var(--text);
-        text-align: center;
+    /* ========== ABOUT SECTION ========== */
+    .about-wrapper {
+        display: flex;
+        justify-content: center;
     }
-
-        .hero .subtitle {
-            margin: 0.5rem 0 1.5rem;
-        }
-
-    .cta {
-        display: inline-block;
-        padding: 0.85rem 1.25rem;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        color: #081018;
-        font-weight: 700;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 2rem;
-        align-items: start;
-    }
-
-    @@media (max-width: 900px) {
-        .grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .ticks {
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0 0;
-    }
-
-        .ticks li {
-            position: relative;
-            padding-left: 1.6rem;
-            margin: 0.4rem 0;
-        }
-
-            .ticks li::before {
-                content: "✓";
-                position: absolute;
-                left: 0;
-                color: var(--ok);
-            }
 
     .about-card {
         background: var(--card);
-        border: 1px solid #1a1f2a;
-        padding: 1.25rem;
-        border-radius: 1rem;
+        border: 1px solid var(--border);
+        padding: 2.5rem;
+        border-radius: 1.25rem;
         color: var(--text);
+        max-width: 700px;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
     }
 
-        .about-card ul {
-            margin: 0.5rem 0 0;
-            padding-left: 1rem;
-        }
+    .about-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+    }
 
-    .courses {
+    .about-card p {
+        margin: 0 0 1.5rem;
+    }
+
+    .about-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ========== TESTIMONIALS SECTION ========== */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .testimonial {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 2rem;
+        border-radius: 1.25rem;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+    }
+
+    .testimonial:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+    }
+
+    .testimonial blockquote {
+        margin: 0 0 1.5rem;
+        font-size: 1.1rem;
+        color: var(--text);
+        font-style: italic;
+        line-height: 1.8;
+    }
+
+    .testimonial figcaption {
+        font-size: 0.95rem;
+        color: var(--muted);
+    }
+
+    .testimonial strong {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    /* ========== COURSES SECTION ========== */
+    .courses-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;
-    }
-
-    @@media (max-width: 1000px) {
-        .courses {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @@media (max-width: 640px) {
-        .courses {
-            grid-template-columns: 1fr;
-        }
+        gap: 2rem;
     }
 
     .course {
         background: var(--card);
-        border: 1px solid #1a1f2a;
-        padding: 1.25rem;
-        border-radius: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
     }
 
-        .course .summary {
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
+    .course:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
 
-        .course .meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.75rem;
-            font-size: 0.95rem;
-            color: var(--muted);
-        }
+    .course-header {
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+    }
 
-    .testimonial {
+    .course h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.35rem;
+    }
+
+    .course-summary {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .course-content {
+        padding: 2rem;
+        flex: 1;
+    }
+
+    .course-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .course-features li {
+        padding: 0.75rem 0;
+        padding-left: 1.75rem;
+        position: relative;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .course-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    .course-footer {
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        background: rgba(128, 128, 128, 0.02);
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .meta-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .meta-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--accent);
+        letter-spacing: 0.5px;
+    }
+
+    .meta-value {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .contact-card,
+    .media-card {
         background: var(--card);
-        border: 1px solid #1a1f2a;
-        padding: 1.5rem;
-        border-radius: 1rem;
+        border: 1px solid var(--border);
+        padding: 2.5rem;
+        border-radius: 1.25rem;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
     }
 
-        .testimonial blockquote {
-            margin: 0 0 0.75rem;
-            font-size: 1.1rem;
-            color: #fff;
-        }
+    .contact-card:hover,
+    .media-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+    }
+
+    .contact-card h3,
+    .media-card h3 {
+        margin-top: 0;
+    }
 
     .contact-list {
         list-style: none;
-        padding-left: 0;
+        padding: 0;
+        margin: 0;
     }
 
-        .contact-list li {
-            margin: 0.5rem 0;
-            color: var(--muted);
-        }
+    .contact-list li {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+    }
 
-        .contact-list a {
-            color: var(--accent);
-        }
+    .contact-list li:last-child {
+        border-bottom: none;
+    }
 
-    .footer {
-        padding: 2rem 0;
-        background: #0a0c12;
+    .contact-label {
+        font-weight: 600;
+        color: var(--text);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
         color: var(--muted);
+        font-size: 0.95rem;
     }
 
-        .footer nav {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 0.5rem;
+    .contact-value a {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .contact-value a:hover {
+        color: var(--accent-2);
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+        padding: 3rem 0;
+        background: var(--card);
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin: 0 0 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover {
+        color: var(--accent);
+    }
+
+    /* ========== RESPONSIVE DESIGN ========== */
+    @@media (max-width: 1000px) {
+        .courses-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .hero {
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .courses-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .course-header {
+            padding: 1.5rem;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-footer {
+            padding: 1.5rem;
+        }
+
+        .about-card {
+            padding: 1.75rem;
+        }
+
+        .contact-card,
+        .media-card {
+            padding: 1.75rem;
+        }
+
+        .cta {
+            padding: 0.85rem 2rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .hero h1 {
+            font-size: 1.75rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        .course-features li {
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-nav {
+            gap: 1rem;
+        }
+    }
 </style>
