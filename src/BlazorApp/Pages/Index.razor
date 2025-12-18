@@ -1,11 +1,1698 @@
 @page "/"
-@inject HttpClient Http
-@inject HeroImageService HeroImageService
+@implements IAsyncDisposable
 
-<PageTitle>Portfolio</PageTitle>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <span class="logo">Fulte With Kuldeep</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="@menuOpen" @onclick="ToggleMobileMenu">
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-menu @(menuOpen ? "active" : "")" id="navMenu">
+            <li><a href="#about" class="nav-link" @onclick="CloseMenu">About</a></li>
+            <li><a href="#testimonials" class="nav-link" @onclick="CloseMenu">Testimonials</a></li>
+            <li><a href="#courses" class="nav-link" @onclick="CloseMenu">Courses</a></li>
+            <li><a href="#contact" class="nav-link" @onclick="CloseMenu">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-<Header />
-<Home Http=@Http HeroImageService=@HeroImageService />
-<About Http=@Http HeroImageService=@HeroImageService />
-<Portfolio Http=@Http HeroImageService=@HeroImageService />
-<Footer Http=@Http PrimaryColor="#4E567E" SecondaryColor="#D2F1E4" />
+<section class="hero">
+    <div class="hero-background">
+        <div class="breath-lines" aria-hidden="true">
+            <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="breathPattern" x="0" y="0" width="200" height="400" patternUnits="userSpaceOnUse">
+                        <path d="M 0 200 Q 50 150, 100 200 T 200 200" stroke="rgba(77, 145, 110, 0.12)" stroke-width="2" fill="none"/>
+                    </pattern>
+                </defs>
+                <rect width="1200" height="400" fill="url(#breathPattern)"/>
+            </svg>
+        </div>
+        <div class="flute-holes" aria-hidden="true">
+            <div class="hole hole-1"></div>
+            <div class="hole hole-2"></div>
+            <div class="hole hole-3"></div>
+            <div class="hole hole-4"></div>
+        </div>
+        <div class="gradient-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <h1>LEARN INDIAN BANSURI FLUTE<br><span class="accent">Online</span></h1>
+            <p class="hero-tagline">Probably the world’s last unadulterated music</p>
+            <a class="cta cta-primary" href="https://calendar.app.google/iew7hQRcnT1rQyse7" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section" data-scroll>
+    <div class="section-accent-top" aria-hidden="true"></div>
+    <div class="container">
+        <h2>About My Journey</h2>
+        <div class="about-wrapper">
+            <article class="about-card">
+                <div class="about-section about-section-1">
+                    <p>
+                        During my MBA studies, when the world spoke in spreadsheets and strategies, <strong>the flute chose me</strong>—or perhaps I finally heard its call. As my Guru says, <strong>"The flute chooses its musician when the musician is ready to listen."</strong> 
+                    </p>
+                    <p>
+                        In that choice, I discovered something my books could never teach: the language of <em>breath, silence, and soul</em>.
+                    </p>
+                </div>
+
+                <div class="about-section about-section-2">
+                    <p>
+                        What began as curiosity became devotion. Under my Guru's patient guidance, I learned that <strong>every note carries a story</strong>, every breath shapes the music, and <strong>patience is the truest teacher</strong>. 
+                    </p>
+                    <p>
+                        Years of practice transformed that initial wonder into something deeper—a responsibility to honor this ancient voice.
+                    </p>
+                </div>
+
+                <div class="about-section about-section-3">
+                    <p>
+                        This journey led me to share what I'd learned. As an instructor, I've guided <strong>more than 250 sincere seekers</strong> from across the world—students who came with open hearts and left with music flowing through their fingertips.
+                    </p>
+                    <p>
+                        Teaching revealed a beautiful truth: <strong>every student is the flute's next chosen one</strong>, and my role is simply to create the space where that choice can unfold.
+                    </p>
+                </div>
+
+                <div class="about-section about-section-4">
+                    <p>
+                        Today, I am fully devoted to this ancient instrument and to the seekers who find their way to it. The bansuri is <strong>not a hobby or a skill</strong>—it is a meditation, a conversation with something timeless.
+                    </p>
+                    <p>
+                        Together, we explore its depth with patience, clarity, and the kind of ease that only comes when you stop struggling and start <strong>listening</strong>.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="section-accent-bottom" aria-hidden="true"></div>
+</section>
+
+<section id="testimonials" class="section section-light" data-scroll>
+    <div class="container">
+        <h2>Wall of trust</h2>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="testimonials-carousel">
+                    <article class="testimonial" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="testimonial-avatar">
+                            <img src="/images/vinayport.jpg" class="avatar-image" />
+                        </div>
+                        <blockquote>
+                            "I began my journey as a complete beginner. In just three months, I found myself playing my favorite melodies with confidence. The emphasis on breathing and tone transformed the way I play."
+                        </blockquote>
+                        <figcaption>
+                            <strong>Vnay Jhedu</strong><br>
+                            <span class="testimonial-subtitle">IT Engineer</span>
+                        </figcaption>
+                    </article>
+                    <article class="testimonial" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="testimonial-avatar">
+                            <img src="/images/nikita.jpg" class="avatar-image" />
+                        </div>
+                        <blockquote>
+                            "From zero experience to confident melodies in three months. The focus on breathing and tone changed everything."
+                        </blockquote>
+                        <figcaption>
+                            <strong>Komal Verma</strong><br>
+                            <span class="testimonial-subtitle">Teacher</span>
+                        </figcaption>
+                    </article>
+                    <!-- Cloned for infinite loop -->
+                    <article class="testimonial" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="testimonial-avatar">
+                            <img src="/images/komal.jpg" class="avatar-image">
+                        </div>
+                        <blockquote>
+                            "When I started, I had no musical background at all. Three months later, I was confidently playing melodies I once thought were impossible. The training on breathing and tone made all the difference."
+                        </blockquote>
+                        <figcaption>
+                            <strong>Nikita Rathore</strong><br>
+                            <span class="testimonial-subtitle">Student</span>
+                        </figcaption>
+                    </article>
+                    <article class="testimonial" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="testimonial-avatar">
+                            <img src="/images/suresh.jpg" class="avatar-image" />
+                        </div>
+                        <blockquote>
+                            "As a complete beginner, I progressed to confidently playing my favorite melodies within three months. The structured focus on breathing techniques and tone quality played a key role in this improvement."
+                        </blockquote>
+                        <figcaption>
+                            <strong>Suresh singh</strong><br>
+                            <span class="testimonial-subtitle">Doctor</span>
+                        </figcaption>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="courses" class="section" data-scroll>
+    <div class="section-accent-top" aria-hidden="true"></div>
+    <div class="container">
+        <h2>Curriculum</h2>
+        <div class="courses-intro">
+            <ul class="curriculum-benefits">
+                <li class="benefit-item benefit-item-1">
+                    <strong class="benefit-label">No</strong>
+                    <span class="benefit-main">scheduling conflicts</span>
+                    <span class="benefit-detail">You arrange your class times directly with me.</span>
+                </li>
+                <li class="benefit-item benefit-item-2">
+                    <strong class="benefit-label">No</strong>
+                    <span class="benefit-main">technical setup</span>
+                    <span class="benefit-detail">All sessions on Zoom — accessible worldwide.</span>
+                </li>
+                <li class="benefit-item benefit-item-3">
+                    <strong class="benefit-label">No</strong>
+                    <span class="benefit-main">prior skills required</span>
+                    <span class="benefit-detail">99% of my students start with zero blowing or musical background.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="courses-grid">
+            <article class="course" data-scroll-item>
+                <div class="course-accent" aria-hidden="true"></div>
+                <div class="course-header">
+                    <h3> BIGINNER</h3>
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Blowing Techniques</li>
+                        <li>Holding &amp; Finger Positioning</li>
+                        <li>Reproducing Swaras from Different Holes</li>
+                        <li>Understanding of Breath</li>
+                        <li>Introduction to Sargam</li>
+                        <li>Introduction to Metronome (1/4x, 1/2x, 1x, 2x Speed)</li>
+                        <li>Long Notes</li>
+                        <li>Introduction to Tatkar (Tonguing Techniques)</li>
+                        <li>Introduction of Alankars and Paltas with Rhythm</li>
+                        <li>Introduction to Saptak</li>
+                        <li>National Anthem Song</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">1-6 Months</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                   
+                </div>
+            </article>
+
+            <article class="course course-featured" data-scroll-item>
+                <div class="course-accent" aria-hidden="true"></div>
+                <div class="course-header">
+                    <h3>INTERMIDIATE</h3>
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Introduction of Advanced Alankaras</li>
+                        <li>Introduction of Merukhand</li>
+                        <li>Introduction of Komal Swara (Ga and Ni)</li>
+                        <li>Introduction of First Four Thaats</li>
+                        <li>Introduction of Chain Practice</li>
+                        <li>First Step Practice of Gamak</li>
+                        <li>Introduction of Tabla and Teentaal</li>
+                        <li>Entry to Raga Bhoopali</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">6 momths to 1.5 year </span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                   
+                </div>
+            </article>
+
+            <article class="course" data-scroll-item>
+                <div class="course-accent" aria-hidden="true"></div>
+                <div class="course-header">
+                    
+                    <h3> ADVANCED  </h3>
+                   
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Bhoopali (Aaroh, Avroh, Alankar, Composition, Taans)</li>
+                        <li>Advanced Chain Practice</li>
+                        <li>Ornamentations (Murki, Gamak, Meend, Khatka, and Kan)</li>
+                        <li>Bollywood Light Music, Bhajans, and Patriotic Songs</li>
+                        <li>Thaats</li>
+                        <li>Raga Yaman (Complete)</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Ideal For</span>
+                        <span class="meta-value">2 years of practice</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                  
+                </div>
+            </article>
+
+            <article class="course" data-scroll-item>
+                <div class="course-accent" aria-hidden="true"></div>
+                <div class="course-header">
+                    
+                    <h3> Pro </h3>
+                    
+                </div>
+                <div class="course-content">
+                    <ul class="course-features">
+                        <li>Mindset Development for Ragas</li>
+                        <li>Process of Making Taans</li>
+                        <li>Introduction to 4x Speed</li>
+                        <li>Shruti Training</li>
+                        <li>Complex Ragas with Komal Swaras</li>
+                        <li>Aalap</li>
+                        <li>Jod</li>
+                        <li>Jhala, and Many More Advanced Concepts</li>
+                    </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="meta-item">
+                        <span class="meta-label">Ideal For</span>
+                        <span class="meta-value">3–4 years of practice </span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Format</span>
+                        <span class="meta-value">Online or In-person</span>
+                    </div>
+                  
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="section-accent-bottom" aria-hidden="true"></div>
+</section>
+
+<section id="contact" class="section section-light" data-scroll>
+    <div class="container">
+        <h2>Connect & Begin</h2>
+        <div class="contact-wrapper">
+            <article class="contact-card" data-scroll-item>
+                <div class="card-accent" aria-hidden="true"></div>
+                <h3>Contact Information</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">mishrakuldeep708@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+919348380399</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Lesson Hours</span>
+                        <span class="contact-value">Flexible</span>
+                    </li>
+                </ul>
+            </article>
+            <article class="media-card" data-scroll-item>
+                <div class="card-accent" aria-hidden="true"></div>
+                <h3>Featured Performance</h3>
+                <div class="video-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                            src="https://www.youtube.com/embed/MBxZMOblPyI?si=S5iceMDvYnLH0Kcv"
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        aria-label="Featured YouTube video">
+                    </iframe>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-copyright">© @DateTime.Now.Year. Give rhythm to breathing.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+@code {
+    private bool menuOpen = false;
+    private IJSRuntime JS { get; set; }
+
+    [Inject]
+    protected IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("initScrollAnimations");
+                await JSRuntime.InvokeVoidAsync("initCarousel");
+            }
+            catch { }
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private void ToggleMobileMenu()
+    {
+        menuOpen = !menuOpen;
+    }
+
+    private void CloseMenu()
+    {
+        menuOpen = false;
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        await Task.CompletedTask;
+    }
+}
+
+<style>
+    :root {
+        --bg: #FAE383;
+        --card: #F5D96B;
+        --text: #3d3d3d;
+        --muted: #6b6b6b;
+        --accent: #4D916E;
+        --accent-2: #3D7154;
+        --accent-3: #6BAA89;
+        --accent-pastel-green: #7FBF9F;
+        --accent-pastel-blue: #c8d9e4;
+        --accent-pastel-lavender: #d4c8d8;
+        --accent-pastel-peach: #e4c8b8;
+        --ok: #4D916E;
+        --border: #e5ddd1;
+        --shadow: 0 2px 8px rgba(61, 61, 61, 0.06);
+        --shadow-lg: 0 8px 24px rgba(61, 61, 61, 0.1);
+        --shadow-xl: 0 12px 32px rgba(61, 61, 61, 0.12);
+        
+        /* Font families */
+        --font-heading: 'Merriweather', serif;
+        --font-body: 'Work Sans', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: var(--font-body);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+        font-weight: 400;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    /* ========== NAVIGATION ========== */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background: rgba(250, 227, 131, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(229, 221, 209, 0.6);
+        box-shadow: 0 2px 12px rgba(61, 61, 61, 0.04);
+    }
+
+    .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    .nav-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.5px;
+    }
+
+    .logo {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0.5rem 0;
+        position: relative;
+        letter-spacing: 0.3px;
+        font-family: var(--font-body);
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .hamburger {
+        width: 24px;
+        height: 3px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    @@media (max-width: 768px) {
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            gap: 0;
+            background: rgba(250, 227, 131, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .nav-menu.active {
+            max-height: 400px;
+        }
+
+        .nav-menu li {
+            width: 100%;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem;
+            border: none;
+        }
+
+        .nav-link::after {
+            display: none;
+        }
+
+        .nav-link:hover {
+            background: rgba(77, 145, 110, 0.06);
+        }
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 0 0;
+        margin-top: 70px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #FAE383 0%, #F9DC73 100%);
+    }
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .breath-lines {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        animation: breathing 6s ease-in-out infinite;
+    }
+
+    .breath-lines svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    @@keyframes breathing {
+        0%, 100% { opacity: 0.4; transform: translateY(0); }
+        50% { opacity: 0.8; transform: translateY(-20px); }
+    }
+
+    .flute-holes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 4rem;
+    }
+
+    .hole {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, rgba(77, 145, 110, 0.25), rgba(77, 145, 110, 0.08));
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+        animation: fluteHoleBreathing 6s ease-in-out infinite;
+        filter: blur(0.5px);
+    }
+
+    .hole-1 { animation-delay: 0s; }
+    .hole-2 { animation-delay: 0.5s; }
+    .hole-3 { animation-delay: 1s; }
+    .hole-4 { animation-delay: 1.5s; }
+
+    @@keyframes floatHole {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+        50% { transform: translateY(-15px) scale(1.1); opacity: 1; }
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, transparent 0%, rgba(250, 227, 131, 0.3) 100%);
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 2rem;
+        letter-spacing: -2px;
+        color: var(--text);
+        font-family: var(--font-heading);
+    }
+
+    .hero h1 .accent {
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    .hero-tagline {
+        font-size: 1.35rem;
+        color: var(--muted);
+        margin: 0 0 3rem;
+        font-weight: 400;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        font-family: var(--font-body);
+    }
+
+    .cta {
+        display: inline-block;
+        padding: 1.1rem 3rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        border: none;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-family: var(--font-body);
+    }
+
+    .cta:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .cta:active {
+        transform: translateY(-2px);
+    }
+
+    @@media (max-width: 768px) {
+        .hero {
+            min-height: 70vh;
+            padding: 80px 0 0;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+        }
+
+        .flute-holes {
+            padding: 2rem;
+        }
+
+        .hole {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+        }
+
+        .cta {
+            padding: 0.9rem 2rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* ========== SECTIONS ========== */
+    .section {
+        position: relative;
+        padding: 6rem 0;
+        color: var(--text);
+        background: var(--bg);
+    }
+
+    .section-light {
+        background: linear-gradient(180deg, #FAE383 0%, #F5D96B 100%);
+    }
+
+    .section h2 {
+        font-size: 2.8rem;
+        margin: 0 0 3.5rem;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: -1px;
+        color: var(--text);
+        font-family: var(--font-heading);
+    }
+
+    .section-accent-top,
+    .section-accent-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 80px;
+        pointer-events: none;
+    }
+
+    .section-accent-top {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(77, 145, 110, 0.08), transparent);
+    }
+
+    .section-accent-bottom {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(77, 145, 110, 0.08), transparent);
+    }
+
+    /* ========== TYPOGRAPHY ========== */
+    h1, h2, h3 {
+        margin: 0 0 1rem;
+        color: var(--text);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 1.5rem;
+        font-size: 1rem;
+        font-family: var(--font-body);
+        font-weight: 400;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--accent-2);
+    }
+
+    .accent {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .about-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 3rem;
+        border-radius: 1.5rem;
+        color: var(--text);
+        max-width: 700px;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .about-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .about-card p {
+        margin: 0 0 1.75rem;
+        font-size: 1.05rem;
+    }
+
+    .about-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-section {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .about-section-1 {
+        animation: fadeInUp 0.8s ease-out 0s forwards;
+    }
+
+    .about-section-2 {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .about-section-3 {
+        animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+
+    .about-section-4 {
+        animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    }
+
+    .about-section:nth-child(n+2) {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(77, 145, 110, 0.15);
+    }
+
+    /* ========== TESTIMONIALS SECTION ========== */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .testimonials-carousel {
+        display: flex;
+        gap: 2.5rem;
+        padding: 2.5rem 1rem;
+        will-change: transform;
+        animation: autoScroll 80s linear infinite;
+    }
+
+    .testimonials-carousel:hover {
+        animation-play-state: paused;
+    }
+
+    .testimonial {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        flex: 0 0 350px;
+        min-width: 350px;
+        height: auto;
+        opacity: 1;
+        transform: translateY(0);
+        padding-top: 5rem;
+    }
+
+    .testimonial:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .testimonial-avatar {
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .avatar-image {
+        display: block;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 3px solid var(--card);
+        box-shadow: 0 2px 8px rgba(77, 145, 110, 0.15);
+        object-fit: cover;
+        background: var(--card);
+    }
+
+    .testimonial-accent {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(77, 145, 110, 0.12), transparent);
+        border-radius: 50%;
+        animation: floatAccent 6s ease-in-out infinite;
+    }
+
+    @@keyframes autoScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-350px * 2 - 2.5rem * 2));
+        }
+    }
+
+    @@keyframes floatAccent {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(30px, -20px); }
+    }
+
+    @@media (max-width: 768px) {
+        .testimonial {
+            flex: 0 0 300px;
+            min-width: 300px;
+            padding: 2rem;
+            padding-top: 4.5rem;
+        }
+
+        .avatar-image {
+            width: 48px;
+            height: 48px;
+        }
+
+        .testimonials-carousel {
+            gap: 2rem;
+            padding: 2rem 1rem;
+        }
+
+        @@keyframes autoScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 2 - 2rem * 2));
+            }
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .testimonial {
+            flex: 0 0 280px;
+            min-width: 280px;
+            padding: 1.5rem;
+            padding-top: 4rem;
+        }
+
+        .avatar-image {
+            width: 40px;
+            height: 40px;
+            border-width: 2px;
+        }
+
+        .testimonial-avatar {
+            top: 1rem;
+        }
+
+        .testimonials-carousel {
+            gap: 1.5rem;
+            padding: 1.5rem 1rem;
+        }
+
+        @@keyframes autoScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-280px * 2 - 1.5rem * 2));
+            }
+        }
+    }
+
+    .testimonial blockquote {
+        margin: 0 0 1.5rem;
+        font-size: 1.15rem;
+        color: var(--text);
+        font-style: italic;
+        line-height: 1.9;
+        letter-spacing: 0.3px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial blockquote::before {
+        content: '"';
+        font-size: 4rem;
+        color: rgba(77, 145, 110, 0.15);
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        line-height: 1;
+    }
+
+    .testimonial figcaption {
+        font-size: 0.95rem;
+        color: var(--text);
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-subtitle {
+        display: block;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    /* ========== COURSES SECTION ========== */
+    .courses-intro {
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        text-align: center;
+    }
+
+    .curriculum-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .benefit-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem;
+        opacity: 1;
+        transform: translateY(0);
+        line-height: 1.6;
+        justify-content: center;
+    }
+
+    .benefit-item-1 {
+        animation: none;
+    }
+
+    .benefit-item-2 {
+        animation: none;
+    }
+
+    .benefit-item-3 {
+        animation: none;
+    }
+
+    .benefit-label {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--accent);
+        white-space: nowrap;
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .benefit-item-1 .benefit-label {
+        animation: fadeInBenefit 0.6s ease-out 0s forwards;
+    }
+
+    .benefit-item-2 .benefit-label {
+        animation: fadeInBenefit 0.6s ease-out 0.15s forwards;
+    }
+
+    .benefit-item-3 .benefit-label {
+        animation: fadeInBenefit 0.6s ease-out 0.3s forwards;
+    }
+
+    .benefit-main {
+        display: inline;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .benefit-detail {
+        display: inline;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        font-style: italic;
+        opacity: 0.85;
+    }
+
+    @@keyframes fadeInBenefit {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+
+    .course {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .course.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .course:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-8px);
+    }
+
+    .course-featured {
+        border-color: rgba(128, 128, 128, 0.3);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .course-featured:hover {
+        box-shadow: var(--shadow-xl);
+    }
+
+    .course-accent {
+        position: absolute;
+        top: 0;
+        right: -50px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, rgba(77, 145, 110, 0.14), transparent);
+        border-radius: 50%;
+        animation: floatAccent 5s ease-in-out infinite;
+    }
+
+    .course-header {
+        padding: 2.5rem;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        z-index: 1;
+    }
+
+    .course-level {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--accent);
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .course h3 {
+        margin: 0.5rem 0 0.75rem;
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+
+    .course-summary {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin: 0;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    .course-content {
+        padding: 2.5rem;
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    .course-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .course-features li {
+        padding: 0.75rem 0;
+        padding-left: 2rem;
+        position: relative;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .course-features li::before {
+        content: "◆";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.6rem;
+        top: 0.95rem;
+    }
+
+    .course-footer {
+        padding: 2.5rem;
+        border-top: 1px solid var(--border);
+        background: rgba(77, 145, 110, 0.04);
+        position: relative;
+        z-index: 1;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.25rem;
+    }
+
+    .meta-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .meta-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--accent);
+        letter-spacing: 0.7px;
+        margin-bottom: 0.5rem;
+    }
+
+    .meta-value {
+        font-size: 0.95rem;
+        color: var(--muted);
+    }
+
+    @@media (max-width: 1000px) {
+        .courses-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .courses-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .course-header,
+        .course-content,
+        .course-footer {
+            padding: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+        }
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .contact-card,
+    .media-card {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateY(30px);
+        overflow: hidden;
+    }
+
+    .contact-card.in-view,
+    .media-card.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .contact-card:hover,
+    .media-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .card-accent {
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(77, 145, 110, 0.12), transparent);
+        border-radius: 50%;
+        animation: floatAccent 7s ease-in-out infinite;
+    }
+
+    .contact-card h3,
+    .media-card h3 {
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+
+    .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-list li {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-list li:last-child {
+        border-bottom: none;
+    }
+
+    .contact-label {
+        font-weight: 600;
+        color: var(--accent);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    .contact-value a {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .contact-value a:hover {
+        color: var(--accent-2);
+        text-decoration: underline;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+    }
+
+    @@media (max-width: 768px) {
+        .contact-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-card,
+        .media-card {
+            padding: 2rem;
+        }
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+        padding: 3.5rem 0;
+        background: var(--card);
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin: 0 0 1.5rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 2.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        letter-spacing: 0.3px;
+        font-family: var(--font-body);
+    }
+
+    .footer-nav a:hover {
+        color: var(--accent);
+    }
+
+    @@media (max-width: 480px) {
+        .footer-nav {
+            gap: 1rem;
+        }
+    }
+
+    /* ========== SCROLL ANIMATIONS ========== */
+    @@media (prefers-reduced-motion: no-preference) {
+        .section[data-scroll] {
+            opacity: 0;
+        }
+
+        .section[data-scroll].in-view {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        [data-scroll-item] {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        [data-scroll-item].in-view {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .about-section-1 {
+            animation: fadeInUp 0.8s ease-out 0s forwards;
+        }
+
+        .about-section-2 {
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .about-section-3 {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .about-section-4 {
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
+        .benefit-item-1 {
+            animation: fadeInBenefit 0.6s ease-out 0s forwards;
+        }
+
+        .benefit-item-2 {
+            animation: fadeInBenefit 0.6s ease-out 0.15s forwards;
+        }
+
+        .benefit-item-3 {
+            animation: fadeInBenefit 0.6s ease-out 0.3s forwards;
+        }
+    }
+
+    @@media (prefers-reduced-motion: reduce) {
+        .about-section {
+            animation: none;
+            opacity: 1;
+        }
+
+        .benefit-item {
+            animation: none;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@supports (backdrop-filter: blur(10px)) {
+        .navbar {
+            background: rgba(250, 227, 131, 0.92);
+        }
+    }
+</style>
+
+<script>
+    window.initScrollAnimations = function() {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    // Only observe once
+                    if (!entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('[data-scroll], [data-scroll-item]').forEach(el => {
+            observer.observe(el);
+        });
+    };
+
+    window.initCarousel = function() {
+        const carousel = document.querySelector('.testimonials-carousel');
+        if (!carousel) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Pause on hover (desktop)
+        carousel.addEventListener('mouseenter', () => {
+            carousel.style.animationPlayState = 'paused';
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            carousel.style.animationPlayState = 'running';
+        });
+
+        // Touch support (mobile)
+        carousel.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].clientX;
+            scrollLeft = carousel.parentElement.scrollLeft;
+            carousel.style.animationPlayState = 'paused';
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].clientX;
+            const walk = (x - startX) * 0.5;
+            carousel.parentElement.scrollLeft = scrollLeft - walk;
+        });
+
+        carousel.addEventListener('touchend', () => {
+            isDown = false;
+            carousel.style.animationPlayState = 'running';
+        });
+
+        // Handle infinite loop by resetting position
+        carousel.addEventListener('animationiteration', () => {
+            // Animation loops infinitely, no reset needed
+        });
+    };
+
+    // Initialize carousel when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.initCarousel();
+        });
+    } else {
+        window.initCarousel();
+    }
+</script>
