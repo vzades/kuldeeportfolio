@@ -58,39 +58,34 @@
             <article class="about-card">
                 <div class="about-section about-section-1">
                     <p>
-                        During my MBA studies, when the world spoke in spreadsheets and strategies, <strong>the flute chose me</strong>—or perhaps I finally heard its call. As my Guru says, <strong>"The flute chooses its musician when the musician is ready to listen."</strong> 
+                        I began learning the bansuri (Indian bamboo flute) during my MBA days and, <strong>As my Guru often says </strong>
                     </p>
                     <p>
-                        In that choice, I discovered something my books could never teach: the language of <em>breath, silence, and soul</em>.
+                        <strong> "The flute chose me, and I chose to stay."</strong>
                     </p>
                 </div>
 
                 <div class="about-section about-section-2">
                     <p>
-                        What began as curiosity became devotion. Under my Guru's patient guidance, I learned that <strong>every note carries a story</strong>, every breath shapes the music, and <strong>patience is the truest teacher</strong>. 
+                        Over time, I became one of the<em> youngest instructors </em> on an online bansuri flute learning platform, where I have<strong> guided more than 250 students globally.</strong>
                     </p>
                     <p>
-                        Years of practice transformed that initial wonder into something deeper—a responsibility to honor this ancient voice.
+                        <strong> This experience shaped
+                            not only my approach to teaching the Hindustani classical instrument
+                            but also my understanding of how individuals truly learn.
+                        </strong>
                     </p>
+                   
                 </div>
 
                 <div class="about-section about-section-3">
+                  
                     <p>
-                        This journey led me to share what I'd learned. As an instructor, I've guided <strong>more than 250 sincere seekers</strong> from across the world—students who came with open hearts and left with music flowing through their fingertips.
-                    </p>
-                    <p>
-                        Teaching revealed a beautiful truth: <strong>every student is the flute's next chosen one</strong>, and my role is simply to create the space where that choice can unfold.
+                        Today, I am fully devoted to the practice and teaching of this ancient Indian instrument, supporting sincere learners in <strong> exploring the bansuri with patience, clarity, and ease</strong>.
                     </p>
                 </div>
 
-                <div class="about-section about-section-4">
-                    <p>
-                        Today, I am fully devoted to this ancient instrument and to the seekers who find their way to it. The bansuri is <strong>not a hobby or a skill</strong>—it is a meditation, a conversation with something timeless.
-                    </p>
-                    <p>
-                        Together, we explore its depth with patience, clarity, and the kind of ease that only comes when you stop struggling and start <strong>listening</strong>.
-                    </p>
-                </div>
+            
             </article>
         </div>
     </div>
@@ -155,6 +150,34 @@
                             <strong>Suresh singh</strong><br>
                             <span class="testimonial-subtitle">Doctor</span>
                         </figcaption>
+                    </article>
+                    <!-- YouTube Testimonial Card -->
+                    <article class="testimonial-video" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="video-testimonial-wrapper">
+                            <div class="video-container">
+                                <iframe 
+                                    width="100%" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/MBxZMOblPyI?si=S5iceMDvYnLH0Kcv"
+                                    title="Student Learning Journey - Bansuri Flute" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen
+                                    loading="lazy"
+                                    aria-label="Student testimonial video showcase">
+                                </iframe>
+                            </div>
+                            <div class="video-testimonial-content">
+                                <blockquote>
+                                    "Watching my journey transform from complete uncertainty to confident performance was incredible. Kuldeep's patient teaching method and emphasis on proper technique made all the difference in my learning."
+                                </blockquote>
+                                <figcaption>
+                                    <strong>Learning Journey Showcase</strong><br>
+                                    <span class="testimonial-subtitle">Student Performance & Feedback</span>
+                                </figcaption>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -1048,7 +1071,7 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-350px * 2 - 2.5rem * 2));
+            transform: translateX(calc(-350px * 2 - 2.5rem * 2 - 720px - 2.5rem));
         }
     }
 
@@ -1080,7 +1103,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-300px * 2 - 2rem * 2));
+                transform: translateX(calc(-300px * 2 - 2rem * 2 - 100% - 2rem));
             }
         }
     }
@@ -1113,7 +1136,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-280px * 2 - 1.5rem * 2));
+                transform: translateX(calc(-280px * 2 - 1.5rem * 2 - 100% - 1.5rem));
             }
         }
     }
@@ -1153,6 +1176,180 @@
         margin-top: 0.25rem;
         letter-spacing: 0.5px;
         text-transform: uppercase;
+    }
+
+    /* ========== YOUTUBE TESTIMONIAL CARD ========== */
+    .testimonial-video {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        flex: 0 0 720px;
+        min-width: 720px;
+        height: auto;
+        opacity: 1;
+        transform: translateY(0);
+        display: flex;
+        align-items: stretch;
+    }
+
+    .testimonial-video:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .video-testimonial-wrapper {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .video-container {
+        flex: 1;
+        min-width: 0;
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 1rem;
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+    }
+
+    .video-testimonial-content {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .video-testimonial-content blockquote {
+        margin: 0 0 1.5rem;
+        font-size: 1.1rem;
+        color: var(--text);
+        font-style: italic;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .video-testimonial-content blockquote::before {
+        content: '"';
+        font-size: 3rem;
+        color: rgba(77, 145, 110, 0.15);
+        position: absolute;
+        top: -15px;
+        left: -10px;
+        line-height: 1;
+    }
+
+    .video-testimonial-content figcaption {
+        font-size: 0.95rem;
+        color: var(--text);
+        position: relative;
+        z-index: 1;
+    }
+
+    @@media (max-width: 1200px) {
+        .testimonial-video {
+            flex: 0 0 600px;
+            min-width: 600px;
+            padding: 2rem;
+        }
+
+        .video-testimonial-wrapper {
+            gap: 1.5rem;
+        }
+
+        .video-testimonial-content blockquote {
+            font-size: 1rem;
+        }
+    }
+
+    @@media (max-width: 900px) {
+        .testimonial-video {
+            flex: 0 0 100%;
+            min-width: auto;
+            padding: 2rem;
+            flex-direction: column;
+        }
+
+        .video-testimonial-wrapper {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .video-container {
+            flex: 1;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        .video-testimonial-content {
+            flex: 1;
+            width: 100%;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .testimonial-video {
+            flex: 0 0 300px;
+            min-width: 300px;
+            padding: 2rem;
+        }
+
+        .video-testimonial-content blockquote {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-testimonial-content blockquote::before {
+            font-size: 2.5rem;
+            top: -12px;
+        }
+
+        .video-testimonial-content figcaption {
+            font-size: 0.85rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .testimonial-video {
+            flex: 0 0 280px;
+            min-width: 280px;
+            padding: 1.5rem;
+        }
+
+        .video-testimonial-wrapper {
+            gap: 1rem;
+        }
+
+        .video-testimonial-content blockquote {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .video-testimonial-content blockquote::before {
+            font-size: 2rem;
+        }
     }
 
     /* ========== COURSES SECTION ========== */
