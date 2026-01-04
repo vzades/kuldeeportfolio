@@ -3098,6 +3098,29 @@
             }
     }
 
+    /* ========== TEXT SELECTION ========== */
+    ::selection {
+        background: rgba(77, 145, 110, 0.25);
+        color: var(--text);
+    }
+
+    ::-moz-selection {
+        background: rgba(77, 145, 110, 0.25);
+        color: var(--text);
+    }
+
+    .hero h1::selection,
+    .hero-tagline::selection {
+        background: rgba(77, 145, 110, 0.2);
+        color: var(--text);
+    }
+
+    .hero h1::-moz-selection,
+    .hero-tagline::-moz-selection {
+        background: rgba(77, 145, 110, 0.2);
+        color: var(--text);
+    }
+
 </style>
 
 <script>
