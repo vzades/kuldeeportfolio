@@ -1,0 +1,972 @@
+@page "/about-teacher"
+@implements IAsyncDisposable
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <span class="logo">Fulte With Kuldeep</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="@menuOpen" @onclick="ToggleMobileMenu">
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-menu @(menuOpen ? "active" : "")" id="navMenu">
+            <li><a href="/" class="nav-link" @onclick="CloseMenu">Home</a></li>
+            <li><a href="/about-teacher" class="nav-link" @onclick="CloseMenu">About</a></li>
+            <li><a href="/#testimonials" class="nav-link" @onclick="CloseMenu">Testimonials</a></li>
+            <li><a href="/#courses" class="nav-link" @onclick="CloseMenu">Courses</a></li>
+            <li><a href="/#contact" class="nav-link" @onclick="CloseMenu">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- About the Teacher Section -->
+<section id="about-teacher" class="section" data-scroll>
+    <div class="section-accent-top" aria-hidden="true"></div>
+    <div class="about-teacher-container">
+        
+        <!-- Section 1: Introduction -->
+        <article class="about-teacher-block about-teacher-block-1" data-scroll-item>
+            <div class="about-teacher-text-wrapper">
+                <div class="about-teacher-section">
+                    <h2 class="about-teacher-heading">I sit with the silence first</h2>
+                    <p>
+                        I didn't come to the bansuri seeking mastery. I came because something in me needed to slow down—to breathe differently, to listen differently. The flute taught me that lesson before it taught me anything about sound.
+                    </p>
+                    <p>
+                        For the last decade, I've been doing this work. Not to collect students or build a reputation, but because I believe this practice—this way of being with the breath—matters. It steadies you. It gives you back your own rhythm.
+                    </p>
+                    <p>
+                        When you come to me, that's what I'm here for: to help you find that same quiet foundation. Everything else follows from there.
+                    </p>
+                </div>
+            </div>
+            <div class="about-teacher-image-wrapper">
+                <img src="images/kuldeep2.jpeg"
+                     alt="Kuldeep Mishra practicing in stillness"
+                     class="about-teacher-image" />
+            </div>
+        </article>
+
+        <!-- Section 2: Why Bansuri -->
+        <article class="about-teacher-block about-teacher-block-2" data-scroll-item>
+            <div class="about-teacher-image-wrapper">
+                <img src="images/kuldeep1.jpeg"
+                     alt="The bansuri in traditional learning"
+                     class="about-teacher-image" />
+            </div>
+            <div class="about-teacher-text-wrapper">
+                <div class="about-teacher-section">
+                    <h2 class="about-teacher-heading">Why this instrument matters</h2>
+                    <p>
+                        The bansuri asks you to do something modern life rarely allows: stop, breathe, and listen to the spaces between sound.
+                    </p>
+                    <p>
+                        There's no way to fake it. No technique that works without presence. Your breath is the sound—so the breath must be steady, patient, aware. That alone changes something in you.
+                    </p>
+                    <p>
+                        In a world that rewards speed, this practice moves slowly. Intentionally. And that slowness is exactly what many people need most right now.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Section 3: My Guru -->
+        <article class="about-teacher-block about-teacher-block-3" data-scroll-item>
+            <div class="about-teacher-text-wrapper">
+                <div class="about-teacher-section">
+                    <h2 class="about-teacher-heading">What my teacher taught me</h2>
+                    <p>
+                        I trained under a guru who embodied patience. He never rushed a single note. He would let me sit with one phrase for weeks, then months, until something shifted in my listening. Not because I was slow, but because real learning doesn't happen quickly.
+                    </p>
+                    <p>
+                        He taught me that discipline isn't harsh. It's gentle. It's showing up, again and again, with the same care. He taught me that listening matters more than playing. That humility opens doors that ego closes.
+                    </p>
+                    <p>
+                        I carry that into my own teaching. Not as rules, but as a quiet understanding: this practice is a conversation between you, the breath, and the silence.
+                    </p>
+                </div>
+            </div>
+            <div class="about-teacher-image-wrapper">
+                <img src="images/kuldeep3.jpeg"
+                     alt="The tradition of one-on-one learning"
+                     class="about-teacher-image about-teacher-image-soft" />
+            </div>
+        </article>
+
+        <!-- Section 4: Teaching Philosophy -->
+        <article class="about-teacher-block about-teacher-block-4" data-scroll-item>
+            <div class="about-teacher-image-wrapper">
+                <img src="images/kuldeep2.jpeg"
+                     alt="Teaching as presence and care"
+                     class="about-teacher-image" />
+            </div>
+            <div class="about-teacher-text-wrapper">
+                <div class="about-teacher-section">
+                    <h2 class="about-teacher-heading">How learning happens here</h2>
+                    <p>
+                        I don't teach a system. I teach a presence. Here's what that means:
+                    </p>
+                    <ul class="about-teacher-philosophy-list">
+                        <li><strong>Breath first.</strong> We stabilize the breath before worrying about notes.</li>
+                        <li><strong>No force.</strong> If it feels tense, we pause and recalibrate.</li>
+                        <li><strong>Your pace.</strong> Some days are for building. Some are for resting. Both matter.</li>
+                        <li><strong>Listening is the practice.</strong> To yourself, to the silence, to the space between sounds.</li>
+                    </ul>
+                    <p>
+                        There's no pressure to progress fast. There's only the invitation to deepen—in your own time, at your own rhythm.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Section 5: My Future Plan -->
+        <article class="about-teacher-block about-teacher-block-5" data-scroll-item>
+            <div class="about-teacher-text-wrapper">
+                <div class="about-teacher-section">
+                    <h2 class="about-teacher-heading">What matters to me going forward</h2>
+                    <p>
+                        I'm not interested in teaching hundreds of students. I'm interested in teaching deeply—staying long enough with each person to see them truly shift.
+                    </p>
+                    <p>
+                        This work is about preserving a way of learning that's almost extinct. One-on-one. Patient. Unrushed. Where a guru doesn't lecture but sits with you, watching your breath, your fingers, your mind. That's what I want to protect.
+                    </p>
+                    <p>
+                        My commitment is simple: to be here, fully present, for whoever is serious about this practice. To hold space for the silence. To remind you, again and again, that slow is not slow—it's the only real speed.
+                    </p>
+                </div>
+            </div>
+            <div class="about-teacher-image-wrapper">
+                <img src="images/kuldeep1.jpeg"
+                     alt="Dedicated to traditional learning"
+                     class="about-teacher-image" />
+            </div>
+        </article>
+
+        <!-- Section 6: Closing Reflection -->
+        <article class="about-teacher-closing" data-scroll-item>
+            <div class="about-teacher-closing-content">
+                <p>
+                    If this way of being with the bansuri resonates with you—if you're drawn to slowness, to breath, to the kind of learning that changes you quietly—then we can begin.
+                </p>
+                <div class="about-teacher-cta-wrapper">
+                    <a href="https://calendar.app.google/iew7hQRcnT1rQyse7" class="cta cta-about" target="_blank" rel="noopener noreferrer">
+                        Begin with a First Session
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+    <div class="section-accent-bottom" aria-hidden="true"></div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-copyright">© @DateTime.Now.Year. Give rhythm to breathing.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="/">Home</a>
+                <a href="/about-teacher">About</a>
+                <a href="/#courses">Courses</a>
+                <a href="/#testimonials">Testimonials</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919348380399"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path fill="currentColor"
+              d="M19.11 17.2c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15-.19.29-.74.93-.9 1.12-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.51.07-.78.36-.26.29-1.02 1-1.02 2.43s1.04 2.82 1.18 3.01c.15.19 2.05 3.13 4.97 4.39.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.11.57-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z" />
+        <path fill="currentColor"
+              d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.65.87 5.1 2.33 7.09L5 29l7.05-1.85a11.98 11.98 0 0 0 4 0c6.64 0 12.04-5.4 12.04-12.04C28.08 8.4 22.68 3 16.04 3zm0 21.8c-1.24 0-2.44-.26-3.55-.78l-.25-.12-4.18 1.1 1.12-4.07-.14-.26a9.78 9.78 0 0 1-1.4-5.03c0-5.42 4.41-9.83 9.83-9.83s9.83 4.41 9.83 9.83-4.41 9.83-9.83 9.83z" />
+    </svg>
+</a>
+
+@code {
+    private bool menuOpen = false;
+    private IJSRuntime JS { get; set; }
+
+    [Inject]
+    protected IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("initScrollAnimations");
+            }
+            catch { }
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private void ToggleMobileMenu()
+    {
+        menuOpen = !menuOpen;
+    }
+
+    private void CloseMenu()
+    {
+        menuOpen = false;
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        await Task.CompletedTask;
+    }
+}
+
+<style>
+    :root {
+        --bg: #fffdef;
+        --card: #F0E8D8;
+        --text: #3d3d3d;
+        --muted: #6b6b6b;
+        --accent: #4D916E;
+        --accent-2: #3D7154;
+        --accent-3: #6BAA89;
+        --accent-pastel-green: #7FBF9F;
+        --accent-pastel-blue: #c8d9e4;
+        --accent-pastel-lavender: #d4c8d8;
+        --accent-pastel-peach: #e4c8b8;
+        --ok: #4D916E;
+        --border: #4D916E;
+        --shadow: 0 2px 8px rgba(61, 61, 61, 0.06);
+        --shadow-lg: 0 8px 24px rgba(61, 61, 61, 0.1);
+        --shadow-xl: 0 12px 32px rgba(61, 61, 61, 0.12);
+        /* Font families */
+        --font-heading: 'Merriweather', serif;
+        --font-body: 'Work Sans', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: var(--font-body);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+        font-weight: 400;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    /* ========== NAVIGATION ========== */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background: rgba(255, 253, 239, 0.6);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(232, 223, 208, 0.2);
+        box-shadow: 0 2px 12px rgba(61, 61, 61, 0.02);
+        transition: all 0.3s ease;
+    }
+
+        .navbar:hover {
+            background: rgba(255, 253, 239, 0.75);
+            border-bottom-color: rgba(232, 223, 208, 0.3);
+        }
+
+    .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    .nav-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.5px;
+    }
+
+    .logo {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0.5rem 0;
+        position: relative;
+        letter-spacing: 0.3px;
+        font-family: var(--font-body);
+    }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .hamburger {
+        width: 24px;
+        height: 3px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    @@media (max-width: 768px) {
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            gap: 0;
+            background: rgba(255, 253, 239, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                border-top: 1px solid var(--border);
+            }
+
+        .nav-link {
+            display: block;
+            padding: 1rem;
+            border: none;
+        }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .nav-link:hover {
+                background: rgba(77, 145, 110, 0.06);
+            }
+    }
+
+    /* ========== ABOUT THE TEACHER SECTION ========== */
+    .about-teacher-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        padding-top: 70px;
+    }
+
+    .about-teacher-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 6rem;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .about-teacher-block[data-scroll-item].in-view {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .about-teacher-block-1[data-scroll-item].in-view {
+        animation-delay: 0.1s;
+    }
+
+    .about-teacher-block-2[data-scroll-item].in-view {
+        animation-delay: 0.2s;
+    }
+
+    .about-teacher-block-3[data-scroll-item].in-view {
+        animation-delay: 0.3s;
+    }
+
+    .about-teacher-block-4[data-scroll-item].in-view {
+        animation-delay: 0.4s;
+    }
+
+    .about-teacher-block-5[data-scroll-item].in-view {
+        animation-delay: 0.5s;
+    }
+
+    /* Zig-zag layout: block 2 and 4 have reversed order */
+    .about-teacher-block-2 .about-teacher-image-wrapper,
+    .about-teacher-block-4 .about-teacher-image-wrapper {
+        order: -1;
+    }
+
+    .about-teacher-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-teacher-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .about-teacher-heading {
+        font-size: 1.9rem;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.7px;
+        color: var(--text);
+        font-family: var(--font-heading);
+        margin: 0 0 0.5rem 0;
+    }
+
+    .about-teacher-section p {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.85;
+        color: var(--muted);
+        font-family: var(--font-body);
+    }
+
+    .about-teacher-section p:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .about-teacher-philosophy-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .about-teacher-philosophy-list li {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--muted);
+        font-family: var(--font-body);
+        padding-left: 1.75rem;
+        position: relative;
+    }
+
+    .about-teacher-philosophy-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+        opacity: 0.7;
+    }
+
+    .about-teacher-philosophy-list li strong {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .about-teacher-image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .about-teacher-image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 1.25rem;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 4px 16px rgba(61, 61, 61, 0.08);
+        transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-teacher-image-wrapper:hover .about-teacher-image {
+        box-shadow: 0 8px 24px rgba(61, 61, 61, 0.12);
+    }
+
+    .about-teacher-image-soft {
+        opacity: 0.95;
+        filter: brightness(1.02) contrast(0.98);
+    }
+
+    .about-teacher-closing {
+        text-align: center;
+        max-width: 800px;
+        margin: 4rem auto 0;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .about-teacher-closing[data-scroll-item].in-view {
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 0.6s;
+    }
+
+    .about-teacher-closing-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .about-teacher-closing p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: var(--muted);
+        margin: 0;
+        font-weight: 400;
+        font-family: var(--font-body);
+    }
+
+    .about-teacher-cta-wrapper {
+        margin-top: 1rem;
+    }
+
+    /* ========== SECTIONS ========== */
+    .section {
+        position: relative;
+        padding: 6rem 0;
+        color: var(--text);
+        background: var(--bg);
+    }
+
+    .section-light {
+        background: linear-gradient(180deg, #f9f5e8 0%, #F0E8D8 100%);
+    }
+
+    .section-accent-top,
+    .section-accent-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 80px;
+        pointer-events: none;
+    }
+
+    .section-accent-top {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(77, 145, 110, 0.08), transparent);
+    }
+
+    .section-accent-bottom {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(77, 145, 110, 0.08), transparent);
+    }
+
+    /* ========== CTA ========== */
+    .cta {
+        display: inline-block;
+        padding: 1.1rem 3rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(77, 145, 110, 0.2);
+        cursor: pointer;
+        border: none;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-family: var(--font-body);
+    }
+
+        .cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(77, 145, 110, 0.25);
+        }
+
+        .cta:active {
+            transform: translateY(-2px);
+        }
+
+    .cta-about {
+        display: inline-block;
+        padding: 0.95rem 2.5rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(77, 145, 110, 0.2);
+        cursor: pointer;
+        border: none;
+        letter-spacing: 0.4px;
+        text-transform: capitalize;
+        font-family: var(--font-body);
+    }
+
+        .cta-about:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(77, 145, 110, 0.25);
+        }
+
+        .cta-about:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .cta-about:active {
+            transform: translateY(-1px);
+        }
+
+    /* ========== FOOTER ========== */
+    .footer {
+        padding: 3.5rem 0;
+        background: var(--card);
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin: 0 0 1.5rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 2.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        .footer-nav a {
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+            font-family: var(--font-body);
+        }
+
+            .footer-nav a:hover {
+                color: var(--accent);
+            }
+
+    @@media (max-width: 480px) {
+        .footer-nav {
+            gap: 1rem;
+        }
+    }
+
+    /* ========== TABLET RESPONSIVE ========== */
+    @@media (max-width: 1000px) {
+        .about-teacher-container {
+            max-width: 1100px;
+        }
+
+        .about-teacher-block {
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .about-teacher-image {
+            max-width: 380px;
+        }
+
+        .about-teacher-section p {
+            font-size: 1rem;
+        }
+
+        .about-teacher-heading {
+            font-size: 1.7rem;
+            letter-spacing: -0.6px;
+        }
+
+        .about-teacher-philosophy-list li {
+            font-size: 1rem;
+        }
+    }
+
+    /* ========== MOBILE RESPONSIVE ========== */
+    @@media (max-width: 768px) {
+        .about-teacher-container {
+            max-width: 100%;
+        }
+
+        /* Stack vertically: image → text */
+        .about-teacher-block {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Image always first */
+        .about-teacher-block-1 .about-teacher-image-wrapper,
+        .about-teacher-block-2 .about-teacher-image-wrapper,
+        .about-teacher-block-3 .about-teacher-image-wrapper,
+        .about-teacher-block-4 .about-teacher-image-wrapper,
+        .about-teacher-block-5 .about-teacher-image-wrapper {
+            order: -1;
+        }
+
+        .about-teacher-block-1 .about-teacher-text-wrapper,
+        .about-teacher-block-2 .about-teacher-text-wrapper,
+        .about-teacher-block-3 .about-teacher-text-wrapper,
+        .about-teacher-block-4 .about-teacher-text-wrapper,
+        .about-teacher-block-5 .about-teacher-text-wrapper {
+            order: 1;
+        }
+
+        .about-teacher-image {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        .about-teacher-heading {
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .about-teacher-section p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .about-teacher-philosophy-list li {
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .about-teacher-closing p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .about-teacher-block {
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-teacher-image {
+            max-height: 250px;
+        }
+
+        .about-teacher-heading {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-teacher-section {
+            gap: 1rem;
+        }
+
+        .about-teacher-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .about-teacher-philosophy-list li {
+            font-size: 0.9rem;
+            line-height: 1.55;
+            padding-left: 1.5rem;
+        }
+
+        .about-teacher-closing {
+            margin-top: 3rem;
+        }
+
+        .about-teacher-closing p {
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .about-teacher-cta-wrapper {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @@media (prefers-reduced-motion: reduce) {
+        .about-teacher-block,
+        .about-teacher-closing {
+            animation: none;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .whatsapp-float {
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: 58px;
+        height: 58px;
+        background: #25D366;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        z-index: 999;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: whatsappPulse 2.5s infinite;
+    }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+        }
+
+    @@keyframes whatsappPulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+        }
+
+        70% {
+            box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .whatsapp-float {
+            width: 52px;
+            height: 52px;
+            right: 1rem;
+            bottom: 1rem;
+        }
+
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
+            }
+    }
+
+    /* ========== TEXT SELECTION ========== */
+    ::selection {
+        background: rgba(77, 145, 110, 0.25);
+        color: var(--text);
+    }
+
+    ::-moz-selection {
+        background: rgba(77, 145, 110, 0.25);
+        color: var(--text);
+    }
+
+</style>
+
+<script>
+    window.initScrollAnimations = function() {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    // Only observe once
+                    if (!entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('[data-scroll], [data-scroll-item]').forEach(el => {
+            observer.observe(el);
+        });
+    };
+</script>
