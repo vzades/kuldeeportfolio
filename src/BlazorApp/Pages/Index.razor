@@ -48,9 +48,7 @@
             <p class="hero-tagline">
                 45 minutes of mental stillness a day for those who don’t want to rush.
             </p>
-            <p class="hero-tagline">
-                breath → nervous system → sound
-            </p>
+           
             <a class="cta cta-primary" href="https://calendar.app.google/iew7hQRcnT1rQyse7" target="_blank" rel="noopener noreferrer">Book a demo</a>
         </div>
     </div>
@@ -179,7 +177,7 @@
                 <li class="benefit-item benefit-item-2">
                     <strong class="benefit-label">No</strong>
                     <span class="benefit-main">technical setup</span>
-                    <span class="benefit-detail">All sessions on Zoom â€” accessible worldwide.</span>
+                    <span class="benefit-detail">All sessions on Zoom accessible worldwide.</span>
                 </li>
                 <li class="benefit-item benefit-item-3">
                     <strong class="benefit-label">No</strong>
@@ -1579,11 +1577,40 @@
         }
 
         .carousel-arrow {
-            display: none;
+            display: flex;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(77, 145, 110, 0.08);
+            border: 1px solid rgba(77, 145, 110, 0.15);
+            color: var(--accent);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(77, 145, 110, 0.15);
+            border-color: rgba(77, 145, 110, 0.25);
+            transform: scale(1.08);
+        }
+
+        .carousel-arrow:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-arrow svg {
+            width: 18px;
+            height: 18px;
         }
 
         .carousel-container {
             width: 100%;
+            overflow: hidden;
         }
     }
 
@@ -1593,22 +1620,6 @@
         max-width: 100%;
         overflow: hidden;
         flex: 1;
-    }
-
-    @@media (max-width: 768px) {
-        .carousel-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-        }
-
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel-container {
-            scrollbar-width: none;
-        }
     }
 
     .testimonials-carousel {
@@ -2008,6 +2019,7 @@
             height: 0;
             overflow: hidden;
             border-radius: 0.75rem;
+            max-height: 200px;
         }
 
         .video-testimonial-content {
@@ -2019,15 +2031,15 @@
         }
 
         .quote-theme {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             letter-spacing: 1rem;
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
 
         .video-testimonial-content blockquote {
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            line-height: 1.75;
             margin: 0 0 1.25rem 0;
             color: var(--text);
         }
@@ -2039,7 +2051,7 @@
         }
 
         .video-testimonial-content figcaption {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 0.5rem;
         }
 
@@ -2088,6 +2100,7 @@
             height: 0;
             border-radius: 0.75rem;
             background: #000;
+            max-height: 180px;
         }
 
         .video-container iframe {
@@ -2100,8 +2113,8 @@
         }
 
         .video-testimonial-content blockquote {
-            font-size: 0.95rem;
-            line-height: 1.65;
+            font-size: 1rem;
+            line-height: 1.7;
             margin: 0 0 1rem 0;
             color: var(--text);
             font-style: italic;
@@ -2114,7 +2127,7 @@
         }
 
         .video-testimonial-content figcaption {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .video-testimonial-content strong {
@@ -3106,15 +3119,6 @@
 
         if (!carousel || !prevBtn || !nextBtn || !container) return;
 
-        // Detect if mobile (arrows are hidden on mobile)
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-        if (isMobile) {
-            // On mobile, disable JavaScript carousel control and allow native touch scrolling
-            carousel.style.transform = 'none';
-            return;
-        }
-
         let currentIndex = 0;
         const items = carousel.querySelectorAll('.testimonial-video');
         const totalItems = items.length;
@@ -3160,14 +3164,6 @@
 
         // Initialize to first slide
         goToSlide(0);
-
-        // Handle responsive changes
-        window.addEventListener('resize', () => {
-            const newIsMobile = window.matchMedia('(max-width: 768px)').matches;
-            if (newIsMobile && !isMobile) {
-                carousel.style.transform = 'none';
-            }
-        });
     };
 
     // Initialize carousel when DOM is ready
