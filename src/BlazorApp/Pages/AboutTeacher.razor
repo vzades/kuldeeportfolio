@@ -88,9 +88,12 @@
                     </p>
                 </div>
             </div>
-            <div class="about-teacher-image-wrapper">
+            <div class="about-teacher-image-wrapper about-teacher-image-group">
                 <img src="images/guru.jpeg"
                      alt="The tradition of one-on-one learning"
+                     class="about-teacher-image about-teacher-image-soft" />
+                <img src="images/guru2.jpeg"
+                     alt="Traditional flute teaching practice"
                      class="about-teacher-image about-teacher-image-soft" />
             </div>
         </article>
@@ -555,6 +558,13 @@
         position: relative;
     }
 
+    .about-teacher-image-wrapper.about-teacher-image-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
     .about-teacher-image {
         width: 100%;
         max-width: 450px;
@@ -564,6 +574,11 @@
         display: block;
         box-shadow: 0 4px 16px rgba(61, 61, 61, 0.08);
         transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-teacher-image-wrapper.about-teacher-image-group .about-teacher-image {
+        max-width: 100%;
+        height: 100%;
     }
 
     .about-teacher-image-wrapper:hover .about-teacher-image {
@@ -756,6 +771,10 @@
             max-width: 380px;
         }
 
+        .about-teacher-image-wrapper.about-teacher-image-group {
+            gap: 1rem;
+        }
+
         .about-teacher-section p {
             font-size: 1rem;
         }
@@ -805,6 +824,11 @@
             max-height: 300px;
         }
 
+        .about-teacher-image-wrapper.about-teacher-image-group {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
         .about-teacher-heading {
             font-size: 1.5rem;
             letter-spacing: -0.5px;
@@ -835,6 +859,11 @@
 
         .about-teacher-image {
             max-height: 250px;
+        }
+
+        .about-teacher-image-wrapper.about-teacher-image-group {
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         .about-teacher-heading {
