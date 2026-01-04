@@ -54,6 +54,68 @@
     </div>
 </section>
 
+<!-- Credibility Block -->
+<section class="credibility-section" data-scroll>
+    <div class="container">
+        <div class="credibility-grid">
+            <div class="credibility-item" data-scroll-item>
+                <div class="credibility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                </div>
+                <div class="credibility-content">
+                    <strong class="credibility-metric">250+ students</strong>
+                    <span class="credibility-label">Learn from proven experience</span>
+                </div>
+            </div>
+
+            <div class="credibility-item" data-scroll-item>
+                <div class="credibility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="credibility-content">
+                    <strong class="credibility-metric">Live 1:1</strong>
+                    <span class="credibility-label">Direct, personalized guidance</span>
+                </div>
+            </div>
+
+            <div class="credibility-item" data-scroll-item>
+                <div class="credibility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="credibility-content">
+                    <strong class="credibility-metric">Beginner-friendly</strong>
+                    <span class="credibility-label">No prior experience needed</span>
+                </div>
+            </div>
+
+            <div class="credibility-item" data-scroll-item>
+                <div class="credibility-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+                    </svg>
+                </div>
+                <div class="credibility-content">
+                    <strong class="credibility-metric">Online worldwide</strong>
+                    <span class="credibility-label">Learn from anywhere, anytime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="about" class="section" data-scroll>
     <div class="section-accent-top" aria-hidden="true"></div>
     <div class="about-container">
@@ -1119,6 +1181,175 @@
         .cta {
             padding: 0.9rem 2rem;
             font-size: 0.9rem;
+        }
+    }
+
+    /* ========== CREDIBILITY SECTION ========== */
+    .credibility-section {
+        position: relative;
+        background: var(--bg);
+        padding: 4rem 0;
+        border-top: 1px solid rgba(77, 145, 110, 0.08);
+        border-bottom: 1px solid rgba(77, 145, 110, 0.08);
+    }
+
+    .credibility-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .credibility-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .credibility-item[data-scroll-item].in-view {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .credibility-item:nth-child(1)[data-scroll-item].in-view {
+        animation-delay: 0.1s;
+    }
+
+    .credibility-item:nth-child(2)[data-scroll-item].in-view {
+        animation-delay: 0.2s;
+    }
+
+    .credibility-item:nth-child(3)[data-scroll-item].in-view {
+        animation-delay: 0.3s;
+    }
+
+    .credibility-item:nth-child(4)[data-scroll-item].in-view {
+        animation-delay: 0.4s;
+    }
+
+    .credibility-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .credibility-icon svg {
+        width: 100%;
+        height: 100%;
+        color: var(--accent);
+        opacity: 0.7;
+    }
+
+    .credibility-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .credibility-metric {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.4;
+        font-family: var(--font-body);
+        letter-spacing: -0.3px;
+    }
+
+    .credibility-label {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.4;
+        font-family: var(--font-body);
+        letter-spacing: 0.3px;
+    }
+
+    @@media (max-width: 1024px) {
+        .credibility-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .credibility-metric {
+            font-size: 0.95rem;
+        }
+
+        .credibility-label {
+            font-size: 0.75rem;
+        }
+
+        .credibility-icon {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .credibility-section {
+            padding: 3rem 0;
+        }
+
+        .credibility-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .credibility-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .credibility-metric {
+            font-size: 0.9rem;
+        }
+
+        .credibility-label {
+            font-size: 0.7rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .credibility-section {
+            padding: 2.5rem 0;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .credibility-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .credibility-item {
+            gap: 0.75rem;
+        }
+
+        .credibility-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .credibility-metric {
+            font-size: 0.8rem;
+        }
+
+        .credibility-label {
+            font-size: 0.65rem;
+        }
+    }
+
+    @@media (prefers-reduced-motion: reduce) {
+        .credibility-item {
+            animation: none;
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
