@@ -20,7 +20,7 @@
     </div>
 </nav>
 
-<section class="hero">
+<section class="hero" tabindex="-1">
     <div class="hero-background">
         <div class="breath-lines" aria-hidden="true">
             <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
@@ -48,7 +48,7 @@
             <p class="hero-tagline">
                 45 minutes of mental stillness a day for those who don’t want to rush.
             </p>
-           
+
             <a class="cta cta-primary" href="https://calendar.app.google/iew7hQRcnT1rQyse7" target="_blank" rel="noopener noreferrer">Book a Free 1:1 Intro Session</a>
         </div>
     </div>
@@ -220,10 +220,10 @@
             </div>
         </article>
     </div>
-   <div class="about-learn-more" data-scroll-item>
+    <div class="about-learn-more" data-scroll-item>
         <NavLink href="about-teacher" class="learn-more-link">learn more about me</NavLink>
-      
-    </div> 
+
+    </div>
     <div class="section-accent-bottom" aria-hidden="true"></div>
 </section>
 
@@ -262,7 +262,7 @@
                 </div>
                 <div class="curriculum-text-wrapper">
                     <div class="curriculum-section curriculum-section-1">
-                        <h1  class="curriculum-level">Beginner</h1>
+                        <h1 class="curriculum-level">Beginner</h1>
                         <p class="curriculum-focus"><strong>Focus:</strong> Comfort, breath awareness, and consistency</p>
                         <p>This stage is about <strong> becoming familiar with the instrument and yourself.</strong></p>
                         <p>We work on <strong> posture, breath, and basic sound production without force.</strong></p>
@@ -274,7 +274,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
 
             <!-- Intermediate Block: Image Right, Text Left -->
@@ -347,16 +347,16 @@
 </section>
 
 <section id="testimonials" class="section section-light" data-scroll>
-<div class="container">
+    <div class="container">
         <h2>In Their Own Words</h2>
-    <div class="carousel-wrapper">
-        <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous testimonial">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </button>
-        <div class="carousel-container">
-            <div class="testimonials-carousel">
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <div class="carousel-container">
+                <div class="testimonials-carousel">
 
                     <!-- YouTube Testimonial Card -->
                     <article class="testimonial-video" data-scroll-item>
@@ -926,7 +926,16 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center right;
+        outline: none;
+        user-select: none;
+        -webkit-user-select: none;
+        transform: none !important;
     }
+
+        .hero:focus,
+        .hero:focus-visible {
+            outline: none;
+        }
 
     .hero-background {
         position: absolute;
@@ -1254,25 +1263,25 @@
         transform: translateY(20px);
     }
 
-    .credibility-item[data-scroll-item].in-view {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
+        .credibility-item[data-scroll-item].in-view {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
 
-    .credibility-item:nth-child(1)[data-scroll-item].in-view {
-        animation-delay: 0.1s;
-    }
+        .credibility-item:nth-child(1)[data-scroll-item].in-view {
+            animation-delay: 0.1s;
+        }
 
-    .credibility-item:nth-child(2)[data-scroll-item].in-view {
-        animation-delay: 0.2s;
-    }
+        .credibility-item:nth-child(2)[data-scroll-item].in-view {
+            animation-delay: 0.2s;
+        }
 
-    .credibility-item:nth-child(3)[data-scroll-item].in-view {
-        animation-delay: 0.3s;
-    }
+        .credibility-item:nth-child(3)[data-scroll-item].in-view {
+            animation-delay: 0.3s;
+        }
 
-    .credibility-item:nth-child(4)[data-scroll-item].in-view {
-        animation-delay: 0.4s;
-    }
+        .credibility-item:nth-child(4)[data-scroll-item].in-view {
+            animation-delay: 0.4s;
+        }
 
     .credibility-icon {
         width: 48px;
@@ -1283,12 +1292,12 @@
         flex-shrink: 0;
     }
 
-    .credibility-icon svg {
-        width: 100%;
-        height: 100%;
-        color: var(--accent);
-        opacity: 0.7;
-    }
+        .credibility-icon svg {
+            width: 100%;
+            height: 100%;
+            color: var(--accent);
+            opacity: 0.7;
+        }
 
     .credibility-content {
         display: flex;
@@ -1829,9 +1838,9 @@
         transform: translateY(20px);
     }
 
-    .about-learn-more[data-scroll-item].in-view {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
+        .about-learn-more[data-scroll-item].in-view {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
 
     .learn-more-link {
         display: inline-block;
@@ -1863,9 +1872,9 @@
             color: var(--accent-2);
         }
 
-        .learn-more-link:hover::after {
-            transform: scaleX(1);
-        }
+            .learn-more-link:hover::after {
+                transform: scaleX(1);
+            }
 
     @@media (max-width: 768px) {
         .about-learn-more {
@@ -1957,20 +1966,20 @@
             z-index: 10;
         }
 
-        .carousel-arrow:hover {
-            background: rgba(77, 145, 110, 0.15);
-            border-color: rgba(77, 145, 110, 0.25);
-            transform: scale(1.08);
-        }
+            .carousel-arrow:hover {
+                background: rgba(77, 145, 110, 0.15);
+                border-color: rgba(77, 145, 110, 0.25);
+                transform: scale(1.08);
+            }
 
-        .carousel-arrow:active {
-            transform: scale(0.95);
-        }
+            .carousel-arrow:active {
+                transform: scale(0.95);
+            }
 
-        .carousel-arrow svg {
-            width: 18px;
-            height: 18px;
-        }
+            .carousel-arrow svg {
+                width: 18px;
+                height: 18px;
+            }
 
         .carousel-container {
             width: 100%;
@@ -2033,12 +2042,12 @@
             transform: scale(0.95);
         }
 
-    .carousel-arrow svg {
-        width: 22px;
-        height: 22px;
-        stroke: currentColor;
-        pointer-events: none;
-    }
+        .carousel-arrow svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            pointer-events: none;
+        }
 
     .carousel-arrow-prev {
         order: -1;
@@ -2274,53 +2283,53 @@
             border-radius: 1rem;
         }
 
-        .video-testimonial-content {
-            flex: 0 0 50%;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+    .video-testimonial-content {
+        flex: 0 0 50%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .quote-theme {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--accent);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+        opacity: 0.9;
+    }
+
+    .video-testimonial-content blockquote {
+        margin: 0 0 1.5rem;
+        font-size: 1.1rem;
+        color: var(--text);
+        font-style: italic;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        position: relative;
+        z-index: 1;
+    }
+
+        .video-testimonial-content blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(77, 145, 110, 0.15);
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            line-height: 1;
         }
 
-        .quote-theme {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            opacity: 0.9;
-        }
-
-        .video-testimonial-content blockquote {
-            margin: 0 0 1.5rem;
-            font-size: 1.1rem;
-            color: var(--text);
-            font-style: italic;
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            position: relative;
-            z-index: 1;
-        }
-
-            .video-testimonial-content blockquote::before {
-                content: '"';
-                font-size: 3rem;
-                color: rgba(77, 145, 110, 0.15);
-                position: absolute;
-                top: -15px;
-                left: -10px;
-                line-height: 1;
-            }
-
-        .video-testimonial-content figcaption {
-            font-size: 0.95rem;
-            color: var(--text);
-            position: relative;
-            z-index: 1;
-        }
+    .video-testimonial-content figcaption {
+        font-size: 0.95rem;
+        color: var(--text);
+        position: relative;
+        z-index: 1;
+    }
 
     @@media (max-width: 1200px) {
         .testimonial-video {
@@ -2408,11 +2417,11 @@
             color: var(--text);
         }
 
-        .video-testimonial-content blockquote::before {
-            font-size: 2.25rem;
-            top: -10px;
-            left: -8px;
-        }
+            .video-testimonial-content blockquote::before {
+                font-size: 2.25rem;
+                top: -10px;
+                left: -8px;
+            }
 
         .video-testimonial-content figcaption {
             font-size: 0.95rem;
@@ -2467,40 +2476,40 @@
             max-height: 180px;
         }
 
-        .video-container iframe {
-            border-radius: 0.75rem;
-        }
+            .video-container iframe {
+                border-radius: 0.75rem;
+            }
 
         .video-testimonial-content {
             width: 100%;
             gap: 0.75rem;
         }
 
-        .video-testimonial-content blockquote {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin: 0 0 1rem 0;
-            color: var(--text);
-            font-style: italic;
-        }
+            .video-testimonial-content blockquote {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin: 0 0 1rem 0;
+                color: var(--text);
+                font-style: italic;
+            }
 
-        .video-testimonial-content blockquote::before {
-            font-size: 2rem;
-            top: -8px;
-            left: -6px;
-        }
+                .video-testimonial-content blockquote::before {
+                    font-size: 2rem;
+                    top: -8px;
+                    left: -6px;
+                }
 
-        .video-testimonial-content figcaption {
-            font-size: 0.9rem;
-        }
+            .video-testimonial-content figcaption {
+                font-size: 0.9rem;
+            }
 
-        .video-testimonial-content strong {
-            display: block;
-            font-weight: 700;
-            color: var(--text);
-            font-size: 0.95rem;
-            margin-bottom: 0.2rem;
-        }
+            .video-testimonial-content strong {
+                display: block;
+                font-weight: 700;
+                color: var(--text);
+                font-size: 0.95rem;
+                margin-bottom: 0.2rem;
+            }
 
         .testimonial-subtitle {
             font-size: 0.75rem;
