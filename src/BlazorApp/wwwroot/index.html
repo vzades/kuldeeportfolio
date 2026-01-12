@@ -23,6 +23,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="BlazorApp.styles.css" rel="stylesheet" />
+    <script>
+        (function() {
+            try {
+                const p = navigator && navigator.permissions;
+                if (p && typeof p.query === 'function') {
+                    // Ensure the native method is always called with the correct receiver
+                    p.query = p.query.bind(p);
+                }
+            } catch (e) {
+                console.warn('Could not bind navigator.permissions.query', e);
+            }
+        })();
+    </script>
 </head>
 
 <body>
