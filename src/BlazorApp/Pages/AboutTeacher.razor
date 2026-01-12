@@ -1094,21 +1094,24 @@
         grid-template-columns: 1fr;
         gap: 1.25rem;
         align-items: start;
+        justify-items: center; /* center items inside the single-column grid on mobile */
     }
 
-    /* make each card full-width inside grid */
-    .testimonial-item .testimonial-card,
-    .testimonial-card.testimonial-item {
-        max-width: none;
-        width: 100%;
+    /* make each card full-width inside grid (mobile-first) */
+    .testimonial-card.testimonial-item,
+    .testimonial-item .testimonial-card {
+        max-width: 720px; /* limit width on small screens so cards are narrower and centered */
+        width: min(92%, 720px); /* keep card narrower than screen and centered via grid */
         padding: 1.25rem;
         background: #F0E8D8;
         border-radius: 1rem;
         box-shadow: 0 8px 20px rgba(13,13,13,0.05);
-        text-align: left;
+        text-align: center; /* center content on small screens */
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 0.75rem;
+        margin: 0; /* grid centering handled by justify-items */
     }
 
     /* keep avatar small and circular */
@@ -1138,7 +1141,8 @@
         flex-direction: column;
         gap: 0.125rem;
         color: var(--muted);
-        text-align: left;
+        text-align: center; /* center meta on mobile */
+        align-items: center;
     }
 
     .testimonial-name {
@@ -1151,10 +1155,24 @@
         color: var(--muted);
     }
 
-    /* Desktop: 3 columns, center content */
+    /* Desktop: 3 columns, align cards for wider viewports */
     @@media (min-width: 720px) {
         .testimonial-grid {
             grid-template-columns: repeat(3, 1fr);
+            justify-items: stretch; /* stretch cards to fill column on desktop */
+        }
+
+        .testimonial-card.testimonial-item,
+        .testimonial-item .testimonial-card {
+            text-align: left;
+            align-items: flex-start;
+            max-width: none; /* allow full width inside each column */
+            width: 100%;
+        }
+
+        .testimonial-meta {
+            text-align: left;
+            align-items: flex-start;
         }
 
         .testimonial-card blockquote p {
