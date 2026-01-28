@@ -681,13 +681,30 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
-            <p class="footer-copyright">© @DateTime.Now.Year. Give rhythm to breathing.</p>
-            <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#about">About</a>
-                <a href="#courses">Courses</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="footer-top">
+                <p class="footer-copyright">© @DateTime.Now.Year. Give rhythm to breathing.</p>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="#about">About</a>
+                    <a href="#courses">Courses</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copywrite">
+                <div class="copywrite-section">
+                    <p class="copywrite-label">Instructor</p>
+                    <p class="copywrite-value">Kuldeep Mishra</p>
+                </div>
+                <div class="copywrite-section">
+                    <p class="copywrite-label">Email</p>
+                    <a href="mailto:mishrakuldeep708@gmail.com" class="copywrite-value">mishrakuldeep708@gmail.com</a>
+                </div>
+                <div class="copywrite-section">
+                    <p class="copywrite-label">Phone</p>
+                    <a href="tel:+919348380399" class="copywrite-value">+91 9348 380 399</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
@@ -3550,6 +3567,123 @@
             .footer-nav a:hover {
                 color: var(--accent);
             }
+
+    /* ========== FOOTER TOP & DIVIDER ========== */
+    .footer-top {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(77, 145, 110, 0.2), transparent);
+        margin: 1.5rem 0;
+    }
+
+    /* ========== FOOTER COPYWRITE SECTION ========== */
+    .footer-copywrite {
+        display: flex;
+        gap: 2.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .copywrite-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        min-width: 160px;
+    }
+
+    .copywrite-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--accent);
+        opacity: 0.9;
+        margin: 0;
+    }
+
+    .copywrite-value {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text);
+        letter-spacing: 0.3px;
+        margin: 0;
+        transition: all 0.3s ease;
+    }
+
+        .copywrite-value a {
+            color: var(--text);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+            .copywrite-value a:hover {
+                color: var(--accent);
+                border-bottom-color: var(--accent);
+            }
+
+    @@media (max-width: 768px) {
+        .footer-copywrite {
+            gap: 2rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+        }
+
+        .copywrite-section {
+            min-width: 140px;
+            gap: 0.2rem;
+        }
+
+        .copywrite-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.7px;
+        }
+
+        .copywrite-value {
+            font-size: 0.8rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .footer-copywrite {
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            align-items: center;
+        }
+
+        .copywrite-section {
+            min-width: auto;
+            text-align: center;
+        }
+
+        .copywrite-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.6px;
+        }
+
+        .copywrite-value {
+            font-size: 0.75rem;
+        }
+
+        .footer-divider {
+            margin: 1rem 0;
+        }
+
+        .footer-top {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
 
     @@media (max-width: 480px) {
         .footer-nav {
