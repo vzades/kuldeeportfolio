@@ -4,18 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flute With Kuldeep</title>
-    <base />
+    <title>Online Bansuri Classes | Learn Hindustani Classical Flute with Kuldeep</title>
+    <meta name="description" content="Learn Bansuri online with Kuldeep. Personalized Hindustani classical flute lessons for beginners and advanced learners." />
+    <link rel="canonical" href="https://flutewithkuldeep.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Online Bansuri Classes | Learn Hindustani Classical Flute with Kuldeep" />
+    <meta property="og:description" content="Learn Bansuri online with Kuldeep. Personalized Hindustani classical flute lessons for beginners and advanced learners." />
+    <meta property="og:url" content="https://flutewithkuldeep.com/" />
+    <meta property="og:site_name" content="Flute With Kuldeep" />
+    <meta property="og:image" content="https://flutewithkuldeep.com/images/herrobanner.png" />
+    <meta property="og:image:alt" content="Kuldeep teaching the Indian Bansuri flute online" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Online Bansuri Classes | Learn Hindustani Classical Flute with Kuldeep" />
+    <meta name="twitter:description" content="Learn Bansuri online with Kuldeep. Personalized Hindustani classical flute lessons for beginners and advanced learners." />
+    <meta name="twitter:image" content="https://flutewithkuldeep.com/images/herrobanner.png" />
+    <base href="/" />
     <script>
         // https://blog.elmah.io/how-to-fix-blazor-wasm-base-path-problems/
         var path = window.location.pathname.split('/');
         var base = document.getElementsByTagName('base')[0];
-        if (window.location.host.includes('localhost')) {
+        if (window.location.host.includes('localhost') || window.location.hostname === 'flutewithkuldeep.com') {
             base.setAttribute('href', '/');
-        } else if (path.length > 2) {
+        } else if (window.location.hostname.endsWith('github.io') && path.length > 2) {
             base.setAttribute('href', '/' + path[1] + '/');
-        } else if (path[path.length - 1].length != 0) {
-            window.location.replace(window.location.origin + window.location.pathname + '/' + window.location.search);
         }
 
     </script>
@@ -23,6 +34,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="BlazorApp.styles.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://flutewithkuldeep.com/#kuldeep",
+              "name": "Kuldeep Mishra",
+              "url": "https://flutewithkuldeep.com/",
+              "image": "https://flutewithkuldeep.com/images/kuldeepcloseup.jpeg",
+              "jobTitle": "Bansuri Teacher",
+              "knowsAbout": ["Bansuri", "Hindustani classical music", "Indian classical flute"]
+            },
+            {
+              "@type": ["MusicSchool", "LocalBusiness"],
+              "@id": "https://flutewithkuldeep.com/#school",
+              "name": "Flute With Kuldeep",
+              "url": "https://flutewithkuldeep.com/",
+              "image": "https://flutewithkuldeep.com/images/herrobanner.png",
+              "description": "Personalized online Bansuri classes and Hindustani classical flute lessons.",
+              "founder": { "@id": "https://flutewithkuldeep.com/#kuldeep" },
+              "areaServed": "Worldwide"
+            },
+            {
+              "@type": "Course",
+              "@id": "https://flutewithkuldeep.com/classes#course",
+              "name": "Online Bansuri Classes",
+              "description": "One-to-one Hindustani classical flute lessons for beginner, intermediate, and advanced Bansuri students.",
+              "provider": { "@id": "https://flutewithkuldeep.com/#school" },
+              "educationalLevel": "Beginner to advanced",
+              "availableLanguage": ["English", "Hindi"]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://flutewithkuldeep.com/#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can beginners learn Bansuri online?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. Beginners can learn posture, breath control, sound production, fingering, and simple melodies through live one-to-one online guidance." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which Bansuri should I buy as a beginner?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "A comfortable medium-sized bamboo flute is usually best. Kuldeep can recommend a suitable scale before you purchase an instrument." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to learn Bansuri?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Progress depends on consistent practice. Students first build a steady tone and basic fingering, then develop melody and raga skills over time." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are classes available online?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. Live personalized Bansuri classes are available online to students worldwide." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you teach Hindustani classical music?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. Lessons include Hindustani classical music foundations, Bansuri technique, swara, rhythm, melody, and raga-based practice." }
+                }
+              ]
+            }
+          ]
+        }
+    </script>
     <script>
         (function() {
             try {
@@ -139,6 +217,49 @@
                 <div class="loader-text">Tuning In</div>
             </div>
         </div>
+        <main class="seo-fallback">
+            <header>
+                <h1>Online Bansuri Classes with Kuldeep</h1>
+                <p>Learn Bansuri online through personalized Hindustani classical flute lessons for beginners and advanced learners.</p>
+            </header>
+            <section>
+                <h2>Learn Bansuri Online</h2>
+                <p>Build breath control, tone, fingering, rhythm, and expression through live one-to-one online Bansuri classes rooted in Indian classical music.</p>
+            </section>
+            <section>
+                <h2>About Kuldeep</h2>
+                <p>Kuldeep Mishra has guided more than 250 students worldwide through calm, structured Bansuri instruction.</p>
+                <a href="about">Learn about Kuldeep</a>
+            </section>
+            <section>
+                <h2>Classes</h2>
+                <p>Beginner Bansuri classes and progressive Hindustani classical flute lessons are available online worldwide.</p>
+                <a href="classes">Explore Bansuri classes</a>
+            </section>
+            <section>
+                <h2>Why Learn With Kuldeep</h2>
+                <p>Students receive personal feedback, traditional musical foundations, flexible scheduling, and a patient learning environment.</p>
+            </section>
+            <section>
+                <h2>FAQ</h2>
+                <h3>Can beginners learn Bansuri online?</h3>
+                <p>Yes. Beginners can learn posture, breath, sound production, fingering, and simple melodies online.</p>
+                <h3>Which Bansuri should I buy as a beginner?</h3>
+                <p>A comfortable medium-sized bamboo flute is usually best; ask Kuldeep for a scale recommendation before buying.</p>
+                <h3>How long does it take to learn Bansuri?</h3>
+                <p>Progress depends on regular practice, beginning with a stable tone and moving toward melody, rhythm, and raga.</p>
+                <h3>Are classes available online?</h3>
+                <p>Yes. Live personalized classes are available to students worldwide.</p>
+                <h3>Do you teach Hindustani classical music?</h3>
+                <p>Yes. Lessons include swara, rhythm, melody, Bansuri technique, and raga-based practice.</p>
+                <a href="faq">Read the Bansuri FAQ</a>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <p>Email <a href="mailto:mishrakuldeep708@gmail.com">mishrakuldeep708@gmail.com</a> or visit the contact page to ask about online lessons.</p>
+                <a href="contact">Contact Kuldeep</a>
+            </section>
+        </main>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>

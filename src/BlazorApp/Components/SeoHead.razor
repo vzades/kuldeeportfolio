@@ -1,0 +1,28 @@
+<PageTitle>@Title</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@Description" />
+    <link rel="canonical" href="@CanonicalUrl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Title" />
+    <meta property="og:description" content="@Description" />
+    <meta property="og:url" content="@CanonicalUrl" />
+    <meta property="og:site_name" content="Flute With Kuldeep" />
+    <meta property="og:image" content="https://flutewithkuldeep.com/images/herrobanner.png" />
+    <meta property="og:image:alt" content="Kuldeep teaching the Indian Bansuri flute online" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@Title" />
+    <meta name="twitter:description" content="@Description" />
+    <meta name="twitter:image" content="https://flutewithkuldeep.com/images/herrobanner.png" />
+</HeadContent>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public string CanonicalUrl { get; set; } = string.Empty;
+}
