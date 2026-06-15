@@ -367,6 +367,34 @@
                             <div class="video-container">
                                 <iframe width="100%"
                                         height="315"
+                                        src="https://youtube.com/embed/oR5h4pUWHKw?si=LywKKO0epjLMeP4a"
+                                        title="Student Learning Journey - Bansuri Flute"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                        loading="lazy"
+                                        aria-label="Student testimonial video showcase">
+                                </iframe>
+                            </div>
+                            <div class="video-testimonial-content">
+                                <span class="quote-theme">A JOURNEY WITH THE BANSURI</span>
+                                <blockquote>
+                                    "I am taking lessons with master Kuldeep Mishra. I feel very good, I am learning the Bansuri, and he is an <mark> excellent teacher—very helpful, makes you feel comfortable, very calm, very skilled </mark>, and teaches very well. I am very happy, I am making a lot of progress, and I will continue like this for a long time."
+                                </blockquote>
+                                <figcaption>
+                                    <strong>Sara  </strong><br>
+                                    <span class="testimonial-subtitle">STUDENT OF BANSURI</span>
+                                </figcaption>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-video" data-scroll-item>
+                        <div class="testimonial-accent" aria-hidden="true"></div>
+                        <div class="video-testimonial-wrapper">
+                            <div class="video-container">
+                                <iframe width="100%"
+                                        height="315"
                                         src="https://youtube.com/embed/LLbWEC5Gdt4?si=EfN-gxOoVIyTFf-w"
                                         title="Student Learning Journey - Bansuri Flute"
                                         frameborder="0"
@@ -747,18 +775,24 @@
 
                 </div>
 
-                <div class="about-cta-wrapper about-cta-centered" data-scroll-item>
-                    <a href="https://calendar.app.google/iew7hQRcnT1rQyse7" class="cta cta-about" target="_blank" rel="noopener noreferrer">
-                        See if this rhythm fits your life
-                    </a>
-                    <p class="cta-subtext">No commitment. One calm session to experience the approach.</p>
-                </div>
+            </div>
+            <div class="carousel-status" aria-live="polite" aria-atomic="true">
+                <span class="carousel-current">1</span>
+                <span aria-hidden="true">/</span>
+                <span class="carousel-total">1</span>
+                <span class="carousel-status-label"> testimonials</span>
             </div>
             <button class="carousel-arrow carousel-arrow-next" aria-label="Next testimonial">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
+            <div class="about-cta-wrapper about-cta-centered carousel-cta" data-scroll-item>
+                <a href="https://calendar.app.google/iew7hQRcnT1rQyse7" class="cta cta-about" target="_blank" rel="noopener noreferrer">
+                    See if this rhythm fits your life
+                </a>
+                <p class="cta-subtext">No commitment. One calm session to experience the approach.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -2212,15 +2246,42 @@
         overflow: hidden;
         margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
     }
 
+    .carousel-cta {
+        order: 2;
+        flex: 0 0 100%;
+    }
+
+    .carousel-status {
+        display: none;
+    }
+
+    .carousel-status-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .testimonial-read-more {
+        display: none;
+    }
+
     @@media (max-width: 768px) {
         .carousel-wrapper {
-            gap: 0;
-            padding: 1rem 0;
+            gap: 0.75rem;
+            padding: 1rem 0 0;
+            overflow: visible;
         }
 
         .carousel-arrow {
@@ -2240,6 +2301,34 @@
             z-index: 10;
         }
 
+        .carousel-arrow-prev {
+            order: 2;
+            margin-left: auto;
+        }
+
+        .carousel-arrow-next {
+            order: 4;
+            margin-right: auto;
+        }
+
+        .carousel-status {
+            order: 3;
+            min-width: 3.5rem;
+            min-height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        .carousel-cta {
+            order: 5;
+        }
+
             .carousel-arrow:hover {
                 background: rgba(77, 145, 110, 0.15);
                 border-color: rgba(77, 145, 110, 0.25);
@@ -2256,8 +2345,12 @@
             }
 
         .carousel-container {
+            order: 1;
+            flex: 0 0 100%;
             width: 100%;
             overflow: hidden;
+            touch-action: pan-y;
+            transition: height 0.3s ease;
         }
     }
 
@@ -2279,8 +2372,10 @@
 
     @@media (max-width: 768px) {
         .testimonials-carousel {
+            align-items: flex-start;
             scroll-behavior: smooth;
-            padding: 1.5rem 0;
+            gap: 1rem;
+            padding: 1.5rem 0 0;
         }
     }
 
@@ -2417,8 +2512,8 @@
         }
 
         .testimonials-carousel {
-            gap: 2rem;
-            padding: 2rem 1rem;
+            gap: 1rem;
+            padding: 1.5rem 0 0;
         }
 
         @@keyframes autoScroll {
@@ -2451,8 +2546,8 @@
         }
 
         .testimonials-carousel {
-            gap: 1.5rem;
-            padding: 1.5rem 1rem;
+            gap: 1rem;
+            padding: 1.25rem 0 0;
         }
 
         @@keyframes autoScroll {
@@ -2745,6 +2840,10 @@
             font-size: 1.05rem;
             line-height: 1.75;
         }
+
+        .testimonial-text-content {
+            margin-top: 0.75rem;
+        }
     }
 
     @@media (max-width: 480px) {
@@ -2824,11 +2923,11 @@
         .video-container {
             flex: 0 0 auto;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
+            aspect-ratio: 16 / 9;
+            padding-bottom: 0;
+            height: auto;
             overflow: hidden;
             border-radius: 0.75rem;
-            max-height: 200px;
         }
 
         .video-testimonial-content {
@@ -2841,19 +2940,50 @@
 
         .quote-theme {
             font-size: 0.75rem;
-            letter-spacing: 1rem;
+            letter-spacing: 0.08rem;
+            margin-top: 0;
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
 
-        .video-testimonial-content blockquote {
+        .video-testimonial-content blockquote,
+        .testimonial-text-content blockquote {
             font-size: 1.05rem;
             line-height: 1.75;
             margin: 0 0 1.25rem 0;
             color: var(--text);
         }
 
-            .video-testimonial-content blockquote::before {
+        .testimonial-quote.is-collapsed {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+        }
+
+        .testimonial-read-more {
+            align-self: flex-start;
+            display: inline-flex;
+            margin: -0.35rem 0 1rem;
+            padding: 0.2rem 0;
+            border: 0;
+            border-bottom: 1px solid currentColor;
+            background: transparent;
+            color: var(--accent-2);
+            font: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .testimonial-read-more:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-bottom-color: transparent;
+        }
+
+            .video-testimonial-content blockquote::before,
+            .testimonial-text-content blockquote::before {
                 font-size: 2.25rem;
                 top: -10px;
                 left: -8px;
@@ -2905,11 +3035,11 @@
         .video-container {
             flex: 0 0 auto;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
+            aspect-ratio: 16 / 9;
+            padding-bottom: 0;
+            height: auto;
             border-radius: 0.75rem;
             background: #000;
-            max-height: 180px;
         }
 
             .video-container iframe {
@@ -2952,6 +3082,69 @@
             letter-spacing: 0.35px;
             margin: 0;
             padding: 0;
+        }
+    }
+
+    /* Keep mobile carousel sizing after all desktop and tablet rules. */
+    @@media (max-width: 768px) {
+        .carousel-wrapper {
+            display: grid;
+            grid-template-columns: 44px auto 44px;
+            align-items: center;
+            column-gap: 0.75rem;
+            row-gap: 1rem;
+        }
+
+        .carousel-container {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            flex: none;
+        }
+
+        .testimonials-carousel {
+            width: 100%;
+        }
+
+        .testimonial-video,
+        .testimonial-text {
+            flex: 0 0 100%;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .carousel-arrow-prev {
+            grid-column: 1;
+            grid-row: 2;
+            order: initial;
+            margin: 0;
+            justify-self: end;
+        }
+
+        .carousel-status {
+            grid-column: 2;
+            grid-row: 2;
+            order: initial;
+            min-width: auto;
+            justify-self: center;
+        }
+
+        .carousel-arrow-next {
+            grid-column: 3;
+            grid-row: 2;
+            order: initial;
+            margin: 0;
+            justify-self: start;
+        }
+
+        .carousel-cta {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            order: initial;
+            width: 100%;
         }
     }
 
@@ -4088,15 +4281,58 @@
         const prevBtn = document.querySelector('.carousel-arrow-prev');
         const nextBtn = document.querySelector('.carousel-arrow-next');
         const container = document.querySelector('.carousel-container');
+        const status = document.querySelector('.carousel-status');
+        const currentStatus = status?.querySelector('.carousel-current');
+        const totalStatus = status?.querySelector('.carousel-total');
 
         if (!carousel || !prevBtn || !nextBtn || !container) return;
+        if (carousel.dataset.initialized === 'true') return;
+        carousel.dataset.initialized = 'true';
 
         let currentIndex = 0;
         const items = carousel.querySelectorAll('.testimonial-video, .testimonial-text');
         const totalItems = items.length;
+        let resizeTimer;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        if (totalStatus) {
+            totalStatus.textContent = totalItems.toString();
+        }
+
+        function isMobile() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        function updateContainerHeight() {
+            if (!isMobile() || totalItems === 0) {
+                container.style.height = '';
+                return;
+            }
+
+            const activeItem = items[currentIndex];
+            container.style.height = `${activeItem.offsetTop + activeItem.offsetHeight}px`;
+        }
+
+        function updateAccessibleState() {
+            items.forEach((item, index) => {
+                const isActive = index === currentIndex;
+                item.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+                if (isActive) {
+                    item.removeAttribute('inert');
+                } else {
+                    item.setAttribute('inert', '');
+                }
+            });
+
+            if (currentStatus) {
+                currentStatus.textContent = (currentIndex + 1).toString();
+            }
+        }
 
         // Navigate to specific index
-        function goToSlide(index) {
+        function goToSlide(index, animate = true) {
             if (totalItems === 0) return;
 
             // Loop around
@@ -4113,7 +4349,12 @@
             const gap = parseInt(window.getComputedStyle(carousel).gap) || 32;
             const scrollDistance = currentIndex * (itemWidth + gap);
 
+            carousel.style.transition = animate
+                ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'none';
             carousel.style.transform = `translateX(-${scrollDistance}px)`;
+            updateAccessibleState();
+            window.requestAnimationFrame(updateContainerHeight);
         }
 
         // Button click handlers
@@ -4125,6 +4366,24 @@
             goToSlide(currentIndex + 1);
         });
 
+        container.addEventListener('touchstart', (event) => {
+            const touch = event.changedTouches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+        }, { passive: true });
+
+        container.addEventListener('touchend', (event) => {
+            const touch = event.changedTouches[0];
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
+
+            if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+                return;
+            }
+
+            goToSlide(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
+        }, { passive: true });
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
@@ -4134,8 +4393,48 @@
             }
         });
 
+        items.forEach((item, index) => {
+            const quote = item.querySelector('blockquote');
+            if (!quote || quote.textContent.trim().length < 220) return;
+
+            const quoteId = `testimonial-quote-${index + 1}`;
+            const toggle = document.createElement('button');
+
+            quote.id = quoteId;
+            quote.classList.add('testimonial-quote', 'is-collapsed');
+            toggle.type = 'button';
+            toggle.className = 'testimonial-read-more';
+            toggle.textContent = 'Read more';
+            toggle.setAttribute('aria-controls', quoteId);
+            toggle.setAttribute('aria-expanded', 'false');
+
+            quote.insertAdjacentElement('afterend', toggle);
+
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                quote.classList.toggle('is-collapsed', isExpanded);
+                toggle.setAttribute('aria-expanded', (!isExpanded).toString());
+                toggle.textContent = isExpanded ? 'Read more' : 'Show less';
+                window.requestAnimationFrame(updateContainerHeight);
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(() => goToSlide(currentIndex, false), 120);
+        });
+
+        window.addEventListener('orientationchange', () => {
+            window.setTimeout(() => goToSlide(currentIndex, false), 150);
+        });
+
+        if ('ResizeObserver' in window) {
+            const activeItemObserver = new ResizeObserver(() => updateContainerHeight());
+            items.forEach(item => activeItemObserver.observe(item));
+        }
+
         // Initialize to first slide
-        goToSlide(0);
+        goToSlide(0, false);
     };
 
     // Initialize carousel when DOM is ready
