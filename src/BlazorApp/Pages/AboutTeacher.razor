@@ -497,31 +497,31 @@
         align-items: center;
         margin-bottom: 6rem;
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     .about-teacher-block[data-scroll-item].in-view {
-        animation: fadeInUp 0.8s ease-out forwards;
+        animation: fadeInUp 0.5s ease-out forwards;
     }
 
     .about-teacher-block-1[data-scroll-item].in-view {
-        animation-delay: 0.1s;
+        animation-delay: 0.04s;
     }
 
     .about-teacher-block-2[data-scroll-item].in-view {
-        animation-delay: 0.2s;
+        animation-delay: 0.08s;
     }
 
     .about-teacher-block-3[data-scroll-item].in-view {
-        animation-delay: 0.3s;
+        animation-delay: 0.1s;
     }
 
     .about-teacher-block-4[data-scroll-item].in-view {
-        animation-delay: 0.4s;
+        animation-delay: 0.12s;
     }
 
     .about-teacher-block-5[data-scroll-item].in-view {
-        animation-delay: 0.5s;
+        animation-delay: 0.14s;
     }
 
     /* Zig-zag layout: block 2 and 4 have reversed order */
@@ -644,12 +644,12 @@
         max-width: 800px;
         margin: 4rem auto 0;
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     .about-teacher-closing[data-scroll-item].in-view {
-        animation: fadeInUp 0.8s ease-out forwards;
-        animation-delay: 0.6s;
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.15s;
     }
 
     .about-teacher-closing-content {
@@ -960,10 +960,17 @@
         }
     }
 
+    @@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+        .about-teacher-block[data-scroll-item].in-view,
+        .about-teacher-closing[data-scroll-item].in-view {
+            animation-duration: 0.4s;
+        }
+    }
+
     @@keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
         }
 
         to {
@@ -1043,26 +1050,39 @@
 
 <script>
     window.initScrollAnimations = function() {
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
+        const isMobile = window.innerWidth <= 768;
+        const revealOnce = (entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add('in-view');
+                entry.target.dataset.animated = 'true';
+                observer.unobserve(entry.target);
+            });
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    // Only observe once
-                    if (!entry.target.dataset.animated) {
-                        entry.target.dataset.animated = 'true';
-                    }
-                }
-            });
-        }, observerOptions);
+        const sectionObserver = new IntersectionObserver(
+            revealOnce,
+            {
+                threshold: 0.01,
+                rootMargin: isMobile ? '0px 0px -10px 0px' : '0px 0px -20px 0px'
+            }
+        );
 
-        // Observe sections
-        document.querySelectorAll('[data-scroll], [data-scroll-item]').forEach(el => {
-            observer.observe(el);
+        const itemObserver = new IntersectionObserver(
+            revealOnce,
+            {
+                threshold: isMobile ? 0.03 : 0.08,
+                rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -40px 0px'
+            }
+        );
+
+        document.querySelectorAll('[data-scroll]').forEach(el => {
+            if (el.dataset.animated !== 'true') sectionObserver.observe(el);
+        });
+
+        document.querySelectorAll('[data-scroll-item]').forEach(el => {
+            if (el.dataset.animated !== 'true') itemObserver.observe(el);
         });
     };
 </script>
